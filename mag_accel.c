@@ -58,13 +58,15 @@ void GyroAngle(float *angle) {
 	//uint32_t time[2] = {0, 0};
 	static float temp = 0.0f;
 	
+	compute_Gyro_RT_Data(gyroBias);
 	timer_init();
 	pwm_ch1_init();
 	//pwm_ch2_init();
 	pwm_ch3_init();
 	pwm_ch4_init();
-	compute_Gyro_RT_Data(gyroBias);
-	while(1){
+	
+	//angle2[0] = angle2[1] = angle2[2] = 0;
+	while(!button_flag){
 
 	//lastValue[0] = currentValue[0];
 	//lastValue[1] = currentValue[1];
@@ -120,4 +122,5 @@ void GyroAngle(float *angle) {
 		
 	delay(20);
 	}	
+	button_flag = 0;
 }

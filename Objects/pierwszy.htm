@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\Objects\pierwszy.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\Objects\pierwszy.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5050041: Last Updated: Thu Jun 04 20:18:23 2015
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5050041: Last Updated: Thu Jun 04 21:09:53 2015
 <BR><P>
 <H3>Maximum Stack Usage =        184 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -254,8 +254,8 @@ Global Symbols
 <P><STRONG><a name="[1c5]"></a>__rt_entry_postsh_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry2.o(.ARM.Collect$$rtentry$$00000009))
 
 <P><STRONG><a name="[78]"></a>__rt_entry_main</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry2.o(.ARM.Collect$$rtentry$$0000000D))
-<BR><BR>[Stack]<UL><LI>Max Depth = 96 + Unknown Stack Size
-<LI>Call Chain = __rt_entry_main &rArr; main &rArr; HAL_Init &rArr; HAL_InitTick &rArr; HAL_NVIC_SetPriority &rArr; NVIC_SetPriority
+<BR><BR>[Stack]<UL><LI>Max Depth = 104 + Unknown Stack Size
+<LI>Call Chain = __rt_entry_main &rArr; main &rArr; BSP_PB_Init &rArr; HAL_NVIC_SetPriority &rArr; NVIC_SetPriority
 </UL>
 <BR>[Calls]<UL><LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 <LI><a href="#[7a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;exit
@@ -285,12 +285,13 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[79]"></a>main</STRONG> (Thumb, 42 bytes, Stack size 24 bytes, main.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 96<LI>Call Chain = main &rArr; HAL_Init &rArr; HAL_InitTick &rArr; HAL_NVIC_SetPriority &rArr; NVIC_SetPriority
+<P><STRONG><a name="[79]"></a>main</STRONG> (Thumb, 50 bytes, Stack size 24 bytes, main.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 104<LI>Call Chain = main &rArr; BSP_PB_Init &rArr; HAL_NVIC_SetPriority &rArr; NVIC_SetPriority
 </UL>
-<BR>[Calls]<UL><LI><a href="#[82]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;accel_gyro_Init
+<BR>[Calls]<UL><LI><a href="#[83]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;accel_gyro_Init
 <LI><a href="#[81]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Init
-<LI><a href="#[83]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GyroAngle
+<LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GyroAngle
+<LI><a href="#[82]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_PB_Init
 <LI><a href="#[7f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LED_Init
 </UL>
 <BR>[Called By]<UL><LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_entry_main
@@ -298,7 +299,7 @@ Global Symbols
 
 <P><STRONG><a name="[c2]"></a>delay</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, main.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;compute_Gyro_RT_Data
-<LI><a href="#[83]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GyroAngle
+<LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GyroAngle
 </UL>
 
 <P><STRONG><a name="[b]"></a>SysTick_Handler</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, main.o(.text))
@@ -309,27 +310,31 @@ Global Symbols
 </UL>
 <P><STRONG><a name="[1c8]"></a>BSP_GetVersion</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, stm32f401_discovery.o(.text), UNUSED)
 
-<P><STRONG><a name="[84]"></a>BSP_LED_Init</STRONG> (Thumb, 122 bytes, Stack size 32 bytes, stm32f401_discovery.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
+<P><STRONG><a name="[85]"></a>BSP_LED_Init</STRONG> (Thumb, 122 bytes, Stack size 32 bytes, stm32f401_discovery.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[86]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
 <LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_Init
 </UL>
 
-<P><STRONG><a name="[86]"></a>BSP_LED_On</STRONG> (Thumb, 24 bytes, Stack size 8 bytes, stm32f401_discovery.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
+<P><STRONG><a name="[87]"></a>BSP_LED_On</STRONG> (Thumb, 24 bytes, Stack size 8 bytes, stm32f401_discovery.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[86]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
 </UL>
 
-<P><STRONG><a name="[87]"></a>BSP_LED_Off</STRONG> (Thumb, 24 bytes, Stack size 8 bytes, stm32f401_discovery.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
+<P><STRONG><a name="[88]"></a>BSP_LED_Off</STRONG> (Thumb, 24 bytes, Stack size 8 bytes, stm32f401_discovery.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[86]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
 </UL>
 
-<P><STRONG><a name="[88]"></a>BSP_LED_Toggle</STRONG> (Thumb, 22 bytes, Stack size 8 bytes, stm32f401_discovery.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_TogglePin
+<P><STRONG><a name="[89]"></a>BSP_LED_Toggle</STRONG> (Thumb, 22 bytes, Stack size 8 bytes, stm32f401_discovery.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[8a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_TogglePin
 </UL>
 
-<P><STRONG><a name="[8a]"></a>BSP_PB_Init</STRONG> (Thumb, 128 bytes, Stack size 32 bytes, stm32f401_discovery.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[8b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_NVIC_SetPriority
+<P><STRONG><a name="[82]"></a>BSP_PB_Init</STRONG> (Thumb, 128 bytes, Stack size 32 bytes, stm32f401_discovery.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 80<LI>Call Chain = BSP_PB_Init &rArr; HAL_NVIC_SetPriority &rArr; NVIC_SetPriority
+</UL>
+<BR>[Calls]<UL><LI><a href="#[8b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_NVIC_SetPriority
 <LI><a href="#[8c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_NVIC_EnableIRQ
 <LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_Init
+</UL>
+<BR>[Called By]<UL><LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
 <P><STRONG><a name="[8d]"></a>BSP_PB_GetState</STRONG> (Thumb, 22 bytes, Stack size 8 bytes, stm32f401_discovery.o(.text), UNUSED)
@@ -339,7 +344,7 @@ Global Symbols
 <P><STRONG><a name="[a1]"></a>GYRO_IO_Init</STRONG> (Thumb, 94 bytes, Stack size 24 bytes, stm32f401_discovery.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 84<LI>Call Chain = GYRO_IO_Init &rArr; SPIx_Init &rArr; SPIx_MspInit &rArr; HAL_GPIO_Init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
+<BR>[Calls]<UL><LI><a href="#[86]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
 <LI><a href="#[9a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPIx_Init
 <LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_Init
 </UL>
@@ -350,7 +355,7 @@ Global Symbols
 <P><STRONG><a name="[a2]"></a>GYRO_IO_Write</STRONG> (Thumb, 62 bytes, Stack size 16 bytes, stm32f401_discovery.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 100<LI>Call Chain = GYRO_IO_Write &rArr; SPIx_WriteRead &rArr; SPIx_Error &rArr; SPIx_Init &rArr; SPIx_MspInit &rArr; HAL_GPIO_Init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
+<BR>[Calls]<UL><LI><a href="#[86]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
 <LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPIx_WriteRead
 </UL>
 <BR>[Called By]<UL><LI><a href="#[6b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;L3GD20_FilterCmd
@@ -365,7 +370,7 @@ Global Symbols
 <P><STRONG><a name="[a3]"></a>GYRO_IO_Read</STRONG> (Thumb, 138 bytes, Stack size 16 bytes, stm32f401_discovery.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 100<LI>Call Chain = GYRO_IO_Read &rArr; SPIx_WriteRead &rArr; SPIx_Error &rArr; SPIx_Init &rArr; SPIx_MspInit &rArr; HAL_GPIO_Init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
+<BR>[Calls]<UL><LI><a href="#[86]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
 <LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPIx_WriteRead
 </UL>
 <BR>[Called By]<UL><LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;L3GD20_ReadXYZAngRate
@@ -380,7 +385,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[a4]"></a>AUDIO_IO_Init</STRONG> (Thumb, 80 bytes, Stack size 24 bytes, stm32f401_discovery.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
+<BR><BR>[Calls]<UL><LI><a href="#[86]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
 <LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Delay
 <LI><a href="#[90]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2Cx_Init
 <LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_Init
@@ -467,7 +472,7 @@ Global Symbols
 <P><STRONG><a name="[be]"></a>BSP_ACCELERO_Init</STRONG> (Thumb, 184 bytes, Stack size 24 bytes, stm32f401_discovery_accelerometer.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = BSP_ACCELERO_Init
 </UL>
-<BR>[Called By]<UL><LI><a href="#[82]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;accel_gyro_Init
+<BR>[Called By]<UL><LI><a href="#[83]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;accel_gyro_Init
 </UL>
 
 <P><STRONG><a name="[1c9]"></a>BSP_ACCELERO_Reset</STRONG> (Thumb, 20 bytes, Stack size 8 bytes, stm32f401_discovery_accelerometer.o(.text), UNUSED)
@@ -477,7 +482,7 @@ Global Symbols
 <P><STRONG><a name="[c8]"></a>BSP_ACCELERO_GetXYZ</STRONG> (Thumb, 50 bytes, Stack size 16 bytes, stm32f401_discovery_accelerometer.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = BSP_ACCELERO_GetXYZ
 </UL>
-<BR>[Called By]<UL><LI><a href="#[83]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GyroAngle
+<BR>[Called By]<UL><LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GyroAngle
 </UL>
 
 <P><STRONG><a name="[ac]"></a>BSP_MAGNETO_Init</STRONG> (Thumb, 52 bytes, Stack size 16 bytes, stm32f401_discovery_accelerometer.o(.text), UNUSED)
@@ -714,7 +719,7 @@ Global Symbols
 <P><STRONG><a name="[bf]"></a>BSP_GYRO_Init</STRONG> (Thumb, 168 bytes, Stack size 24 bytes, stm32f401_discovery_gyroscope.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = BSP_GYRO_Init
 </UL>
-<BR>[Called By]<UL><LI><a href="#[82]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;accel_gyro_Init
+<BR>[Called By]<UL><LI><a href="#[83]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;accel_gyro_Init
 </UL>
 
 <P><STRONG><a name="[1cb]"></a>BSP_GYRO_ReadID</STRONG> (Thumb, 26 bytes, Stack size 8 bytes, stm32f401_discovery_gyroscope.o(.text), UNUSED)
@@ -734,7 +739,7 @@ Global Symbols
 <LI><a href="#[c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;compute_Gyro_RT_Data
 </UL>
 
-<P><STRONG><a name="[82]"></a>accel_gyro_Init</STRONG> (Thumb, 18 bytes, Stack size 8 bytes, mag_accel.o(.text))
+<P><STRONG><a name="[83]"></a>accel_gyro_Init</STRONG> (Thumb, 18 bytes, Stack size 8 bytes, mag_accel.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = accel_gyro_Init &rArr; BSP_GYRO_Init
 </UL>
 <BR>[Calls]<UL><LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_GYRO_Init
@@ -749,7 +754,7 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_GYRO_GetXYZ
 <LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay
 </UL>
-<BR>[Called By]<UL><LI><a href="#[83]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GyroAngle
+<BR>[Called By]<UL><LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GyroAngle
 </UL>
 
 <P><STRONG><a name="[c3]"></a>getGyro</STRONG> (Thumb, 62 bytes, Stack size 24 bytes, mag_accel.o(.text))
@@ -757,11 +762,11 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_GYRO_GetXYZ
 </UL>
-<BR>[Called By]<UL><LI><a href="#[83]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GyroAngle
+<BR>[Called By]<UL><LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GyroAngle
 </UL>
 
-<P><STRONG><a name="[83]"></a>GyroAngle</STRONG> (Thumb, 658 bytes, Stack size 0 bytes, mag_accel.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = GyroAngle &rArr; compute_Gyro_RT_Data &rArr; BSP_GYRO_GetXYZ
+<P><STRONG><a name="[84]"></a>GyroAngle</STRONG> (Thumb, 676 bytes, Stack size 8 bytes, mag_accel.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 56<LI>Call Chain = GyroAngle &rArr; compute_Gyro_RT_Data &rArr; BSP_GYRO_GetXYZ
 </UL>
 <BR>[Calls]<UL><LI><a href="#[c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;timer_init
 <LI><a href="#[c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pwm_ch4_init
@@ -785,7 +790,7 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[ce]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_Base_Start_IT
 <LI><a href="#[cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_Base_Init
 </UL>
-<BR>[Called By]<UL><LI><a href="#[83]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GyroAngle
+<BR>[Called By]<UL><LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GyroAngle
 </UL>
 
 <P><STRONG><a name="[c5]"></a>pwm_ch1_init</STRONG> (Thumb, 36 bytes, Stack size 8 bytes, tim_pwm.o(.text))
@@ -794,11 +799,11 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[d0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_CCxChannelCmd
 <LI><a href="#[cf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_PWM_ConfigChannel
 </UL>
-<BR>[Called By]<UL><LI><a href="#[83]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GyroAngle
+<BR>[Called By]<UL><LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GyroAngle
 </UL>
 
 <P><STRONG><a name="[cc]"></a>pwm_ch1_dim</STRONG> (Thumb, 56 bytes, Stack size 0 bytes, tim_pwm.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[83]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GyroAngle
+<BR><BR>[Called By]<UL><LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GyroAngle
 </UL>
 
 <P><STRONG><a name="[d1]"></a>pwm_ch2_init</STRONG> (Thumb, 38 bytes, Stack size 8 bytes, tim_pwm.o(.text), UNUSED)
@@ -812,7 +817,7 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[d0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_CCxChannelCmd
 <LI><a href="#[cf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_PWM_ConfigChannel
 </UL>
-<BR>[Called By]<UL><LI><a href="#[83]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GyroAngle
+<BR>[Called By]<UL><LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GyroAngle
 </UL>
 
 <P><STRONG><a name="[c7]"></a>pwm_ch4_init</STRONG> (Thumb, 38 bytes, Stack size 8 bytes, tim_pwm.o(.text))
@@ -821,7 +826,7 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[d0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_CCxChannelCmd
 <LI><a href="#[cf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_PWM_ConfigChannel
 </UL>
-<BR>[Called By]<UL><LI><a href="#[83]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GyroAngle
+<BR>[Called By]<UL><LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GyroAngle
 </UL>
 
 <P><STRONG><a name="[d6]"></a>HAL_MspInit</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, stm32f4xx_hal.o(.text))
@@ -915,14 +920,14 @@ Global Symbols
 </UL>
 <BR>[Called By]<UL><LI><a href="#[d2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_InitTick
 <LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;COMPASSACCELERO_IO_ITConfig
-<LI><a href="#[8a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_PB_Init
 <LI><a href="#[8f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2Cx_MspInit
+<LI><a href="#[82]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_PB_Init
 </UL>
 
 <P><STRONG><a name="[8c]"></a>HAL_NVIC_EnableIRQ</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, stm32f4xx_hal_cortex.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;COMPASSACCELERO_IO_ITConfig
-<LI><a href="#[8a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_PB_Init
 <LI><a href="#[8f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2Cx_MspInit
+<LI><a href="#[82]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_PB_Init
 </UL>
 
 <P><STRONG><a name="[1de]"></a>HAL_NVIC_DisableIRQ</STRONG> (Thumb, 22 bytes, Stack size 0 bytes, stm32f4xx_hal_cortex.o(.text), UNUSED)
@@ -969,10 +974,10 @@ Global Symbols
 <LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;COMPASSACCELERO_IO_Init
 <LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AUDIO_IO_Init
 <LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GYRO_IO_Init
-<LI><a href="#[8a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_PB_Init
-<LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_LED_Init
+<LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_LED_Init
 <LI><a href="#[99]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPIx_MspInit
 <LI><a href="#[8f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2Cx_MspInit
+<LI><a href="#[82]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_PB_Init
 <LI><a href="#[7f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LED_Init
 </UL>
 
@@ -982,18 +987,18 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[8d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_PB_GetState
 </UL>
 
-<P><STRONG><a name="[85]"></a>HAL_GPIO_WritePin</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, stm32f4xx_hal_gpio.o(.text))
+<P><STRONG><a name="[86]"></a>HAL_GPIO_WritePin</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, stm32f4xx_hal_gpio.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AUDIO_IO_Init
 <LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GYRO_IO_Read
 <LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GYRO_IO_Write
 <LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GYRO_IO_Init
-<LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_LED_Off
-<LI><a href="#[86]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_LED_On
-<LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_LED_Init
+<LI><a href="#[88]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_LED_Off
+<LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_LED_On
+<LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_LED_Init
 </UL>
 
-<P><STRONG><a name="[89]"></a>HAL_GPIO_TogglePin</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, stm32f4xx_hal_gpio.o(.text), UNUSED)
-<BR><BR>[Called By]<UL><LI><a href="#[88]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_LED_Toggle
+<P><STRONG><a name="[8a]"></a>HAL_GPIO_TogglePin</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, stm32f4xx_hal_gpio.o(.text), UNUSED)
+<BR><BR>[Called By]<UL><LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_LED_Toggle
 </UL>
 
 <P><STRONG><a name="[1e7]"></a>HAL_GPIO_LockPin</STRONG> (Thumb, 46 bytes, Stack size 8 bytes, stm32f4xx_hal_gpio.o(.text), UNUSED)
@@ -2321,7 +2326,7 @@ Global Symbols
 <LI><a href="#[1a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__mathlib_flt_infnan2
 <LI><a href="#[1a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__ARM_fpclassifyf
 </UL>
-<BR>[Called By]<UL><LI><a href="#[83]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GyroAngle
+<BR>[Called By]<UL><LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GyroAngle
 </UL>
 
 <P><STRONG><a name="[cb]"></a>__hardfp_cosf</STRONG> (Thumb, 280 bytes, Stack size 8 bytes, cosf.o(i.__hardfp_cosf))
@@ -2332,7 +2337,7 @@ Global Symbols
 <LI><a href="#[1a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__mathlib_flt_infnan
 <LI><a href="#[19d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__set_errno
 </UL>
-<BR>[Called By]<UL><LI><a href="#[83]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GyroAngle
+<BR>[Called By]<UL><LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GyroAngle
 </UL>
 
 <P><STRONG><a name="[ca]"></a>__hardfp_sinf</STRONG> (Thumb, 344 bytes, Stack size 16 bytes, sinf.o(i.__hardfp_sinf))
@@ -2345,7 +2350,7 @@ Global Symbols
 <LI><a href="#[1a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__ARM_fpclassifyf
 <LI><a href="#[19d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__set_errno
 </UL>
-<BR>[Called By]<UL><LI><a href="#[83]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GyroAngle
+<BR>[Called By]<UL><LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GyroAngle
 </UL>
 
 <P><STRONG><a name="[1a6]"></a>__mathlib_flt_infnan</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, funder.o(i.__mathlib_flt_infnan))

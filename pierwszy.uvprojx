@@ -473,6 +473,26 @@
               <FileType>1</FileType>
               <FilePath>.\mag_accel.c</FilePath>
             </File>
+            <File>
+              <FileName>tim_pwm.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\tim_pwm.c</FilePath>
+            </File>
+            <File>
+              <FileName>tim_pwm_functions.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\tim_pwm_functions.c</FilePath>
+            </File>
+            <File>
+              <FileName>tim_pwm_functions.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\tim_pwm_functions.h</FilePath>
+            </File>
+            <File>
+              <FileName>tim_pwm.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\tim_pwm.h</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -561,6 +581,16 @@
               <FileType>1</FileType>
               <FilePath>D:\Programy\Na Studia!!\TMP2\Keil_v5\Pack\Keil\STM32F4xx_DFP\2.3.0\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_spi.c</FilePath>
             </File>
+            <File>
+              <FileName>stm32f4xx_hal_tim.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>D:\Programy\Na Studia!!\TMP2\Keil_v5\Pack\Keil\STM32F4xx_DFP\2.3.0\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_tim.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f4xx_hal_tim_ex.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>D:\Programy\Na Studia!!\TMP2\Keil_v5\Pack\Keil\STM32F4xx_DFP\2.3.0\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_tim_ex.c</FilePath>
+            </File>
           </Files>
         </Group>
       </Groups>
@@ -632,6 +662,12 @@
         </targetInfos>
       </component>
       <component Cclass="Device" Cgroup="STM32Cube HAL" Csub="SPI" Cvendor="Keil" Cversion="1.1.0" condition="STM32F4 HAL DMA">
+        <package name="STM32F4xx_DFP" schemaVersion="1.2" url="http://www.keil.com/pack" vendor="Keil" version="2.3.0"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </component>
+      <component Cclass="Device" Cgroup="STM32Cube HAL" Csub="TIM" Cvendor="Keil" Cversion="1.1.0" condition="STM32F4 HAL DMA">
         <package name="STM32F4xx_DFP" schemaVersion="1.2" url="http://www.keil.com/pack" vendor="Keil" version="2.3.0"/>
         <targetInfos>
           <targetInfo name="Target 1"/>

@@ -21,7 +21,7 @@ int main() {
 	
 	HAL_Init();
 	LED_Init();
-	//BSP_PB_Init(BUTTON_KEY, BUTTON_MODE_GPIO);
+	BSP_PB_Init(BUTTON_KEY, BUTTON_MODE_EXTI);
 	//timer_init();
 	//pwm_ch1_init();
 	//pwm_ch2_init();
