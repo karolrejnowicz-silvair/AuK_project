@@ -10,6 +10,8 @@ void pwm_ch2_init(void);
 void pwm_ch3_init(void);
 void pwm_ch4_init(void);
 	
+void pwm_init(int channel);
+
 
 
 // Nie wiem dlaczego ale to nie jest zdefiniowane w pliku stm32f4xx_hal_tim_ex.h

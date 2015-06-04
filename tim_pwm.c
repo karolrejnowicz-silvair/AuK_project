@@ -70,6 +70,38 @@ void timer_init(void){
 		 
 	}
 
+void pwm_init(int channel){
+	
+	  TIM_OCInitStructure.OCMode = TIM_OCMODE_PWM1;
+	 	TIM_OCInitStructure.Pulse = 0;//CCR1_Val;
+		TIM_OCInitStructure.OCPolarity = TIM_OCPOLARITY_HIGH;
+		TIM_OCInitStructure.OCFastMode = TIM_OCFAST_DISABLE;
+	
+	switch(channel){
+		
+		case 1:	
+						HAL_TIM_PWM_ConfigChannel(&TIM4_Handle, &TIM_OCInitStructure, TIM_CHANNEL_1);
+						TIM_CCxChannelCmd(TIM4, TIM_CHANNEL_1, TIM_CCx_ENABLE);
+						break;
+		case 2:
+						HAL_TIM_PWM_ConfigChannel(&TIM4_Handle, &TIM_OCInitStructure, TIM_CHANNEL_2);
+						TIM_CCxChannelCmd(TIM4, TIM_CHANNEL_2, TIM_CCx_ENABLE);
+						break;
+		case 3:
+						HAL_TIM_PWM_ConfigChannel(&TIM4_Handle, &TIM_OCInitStructure, TIM_CHANNEL_3);
+						TIM_CCxChannelCmd(TIM4, TIM_CHANNEL_3, TIM_CCx_ENABLE);
+						break;
+		case 4:	
+						HAL_TIM_PWM_ConfigChannel(&TIM4_Handle, &TIM_OCInitStructure, TIM_CHANNEL_4);
+						TIM_CCxChannelCmd(TIM4, TIM_CHANNEL_4, TIM_CCx_ENABLE);
+						break;
+		default:
+						break;
+	}
+	
+	
+}
+	
 void pwm_ch1_init(void){
 		/* PWM1 Mode configuration: Channel1 */
 		TIM_OCInitStructure.OCMode = TIM_OCMODE_PWM1;
