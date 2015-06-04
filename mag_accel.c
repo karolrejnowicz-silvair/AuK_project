@@ -55,8 +55,13 @@ void GyroAngle(float *angle) {
 	static int16_t Data[3] = {0.0f, 0.0f, 0.0f};
 	static float sinAngle, cosAngle;
 	//uint32_t time[2] = {0, 0};
+	static float temp = 0.0f;
 	
-	
+	timer_init();
+	pwm_ch1_init();
+	//pwm_ch2_init();
+	pwm_ch3_init();
+	pwm_ch4_init();
 	compute_Gyro_RT_Data(gyroBias);
 	while(1){
 
@@ -89,6 +94,28 @@ void GyroAngle(float *angle) {
 	//angle2[0] += angleDelta[0];
 	//angle2[1] += angleDelta[1];
 	angle2[2] += angleDelta[2];
+	
+	if(angle2[0] > 50)
+		angle2[0] = 50;
+	else if (angle2[0] < -50 ) 
+		angle2[0] = -50;
+	
+	if(angle2[1] > 50)
+		angle2[1] = 50;
+	else if (angle2[1] < -50 ) 
+		angle2[1] = -50;
+	
+	temp = angle2[2];
+	if(temp > 50)
+		temp = 50;
+	else if (temp < -50 ) 
+		temp = -50;
+	
+	
+	
+		pwm_ch1_dim((angle2[0]+50)*10 , 1);	
+		pwm_ch1_dim((angle2[1]+50)*10 , 3);
+		pwm_ch1_dim((temp+50)*10 , 4);
 		
 	delay(20);
 	}	

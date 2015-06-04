@@ -38,3 +38,4 @@
 .\objects\mag_accel.o: l3gd20.h
 .\objects\mag_accel.o: gyro.h
 .\objects\mag_accel.o: .\STM32F401-Discovery\stm32f401_discovery_gyroscope.h
+.\objects\mag_accel.o: tim_pwm.h

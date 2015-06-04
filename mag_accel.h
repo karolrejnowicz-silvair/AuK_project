@@ -7,6 +7,7 @@
 #include "math.h"
 #include "l3gd20.h"
 #include "stm32f401_discovery_gyroscope.h"
+#include "tim_pwm.h"
 
 #define ASTALA 0.000061f
 #define MSTALA 0.00003967f

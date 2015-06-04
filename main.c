@@ -5,7 +5,7 @@
 #include "stm32f401_discovery_accelerometer.h"
 #include "math.h"
 #include "mag_accel.h"
-#include "tim_pwm.h"
+//#include "tim_pwm.h"
 
 
 void LED_Init(void);
@@ -17,38 +17,22 @@ int tick = 0;
 int main() {
 
 	uint8_t data[2] = {0, 0};
-	int8_t n = 0;
-	uint16_t a = 0;
 	float Data[3] = {0, 0, 0};
 	
 	HAL_Init();
 	LED_Init();
-	timer_init();
-	pwm_ch1_init();
-	pwm_ch2_init();
-	pwm_ch3_init();
-	pwm_ch4_init();
 	
-	//accel_gyro_Init(data);
+	
+	
+	accel_gyro_Init(data);
 
 
 	tick = 0; 
-	//GyroAngle(Data);
+	GyroAngle(Data);
 
 	//}
 	while(1)
-	{		
-if(a <= 0) n = 1;
-				if(a >=1000) n = -1;
-				a += n;
-				pwm_ch1_dim(a , 2);	
-				pwm_ch1_dim(a , 1);
-				pwm_ch1_dim(a , 3);
-				pwm_ch1_dim(a , 4);			
-					delay(2);
-
-		
-		
+	{				
 	}
 	
 	return 0;

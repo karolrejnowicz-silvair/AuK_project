@@ -1,5 +1,5 @@
 Dependencies for Project 'pierwszy', Target 'Target 1': (DO NOT MODIFY !)
-F (.\main.c)(0x557016B5)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork -I.\STM32F401-Discovery-I "C:\Users\Karol\Documents\AuK\Projekt I2C + sensory\RTE"-I "C:\Users\Karol\Documents\AuK\Projekt I2C + sensory\RTE\Device\STM32F401VCTx"-I "D:\Programy\Na Studia!!\TMP2\Keil_v5\Pack\ARM\CMSIS\4.2.0\CMSIS\Include"-I "D:\Programy\Na Studia!!\TMP2\Keil_v5\Pack\Keil\STM32F4xx_DFP\2.3.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include"-I "D:\Programy\Na Studia!!\TMP2\Keil_v5\Pack\Keil\STM32F4xx_DFP\2.3.0\Drivers\STM32F4xx_HAL_Driver\Inc"-D_RTE_ -DSTM32F401xC-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
+F (.\main.c)(0x55704A29)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork -I.\STM32F401-Discovery-I "C:\Users\Karol\Documents\AuK\Projekt I2C + sensory\RTE"-I "C:\Users\Karol\Documents\AuK\Projekt I2C + sensory\RTE\Device\STM32F401VCTx"-I "D:\Programy\Na Studia!!\TMP2\Keil_v5\Pack\ARM\CMSIS\4.2.0\CMSIS\Include"-I "D:\Programy\Na Studia!!\TMP2\Keil_v5\Pack\Keil\STM32F4xx_DFP\2.3.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include"-I "D:\Programy\Na Studia!!\TMP2\Keil_v5\Pack\Keil\STM32F4xx_DFP\2.3.0\Drivers\STM32F4xx_HAL_Driver\Inc"-D_RTE_ -DSTM32F401xC-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
 I (D:\Programy\Na Studia!!\TMP2\Keil_v5\Pack\Keil\STM32F4xx_DFP\2.3.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal.h)(0x53AC8160)
 I (C:\Users\Karol\Documents\AuK\Projekt I2C + sensory\RTE\Device\STM32F401VCTx\stm32f4xx_hal_conf.h)(0x5410C55A)
 I (C:\Users\Karol\Documents\AuK\Projekt I2C + sensory\RTE\RTE_Components.h)(0x557015F9)
@@ -34,7 +34,7 @@ I (lsm303dlhc.h)(0x55631231)
 I (accelero.h)(0x555F80B4)
 I (.\STM32F401-Discovery\stm32f401_discovery_accelerometer.h)(0x5560A727)
 I (D:\Programy\Na Studia!!\TMP2\Keil_v5\Core\ARM\ARMCC\include\math.h)(0x5419F1DA)
-I (mag_accel.h)(0x5570121A)
+I (mag_accel.h)(0x55704A1D)
 I (l3gd20.h)(0x556AC234)
 I (gyro.h)(0x5555D83F)
 I (.\STM32F401-Discovery\stm32f401_discovery_gyroscope.h)(0x556AC27A)
@@ -180,8 +180,8 @@ I (D:\Programy\Na Studia!!\TMP2\Keil_v5\Pack\Keil\STM32F4xx_DFP\2.3.0\Drivers\ST
 I (STM32F401-Discovery\..\l3gd20.h)(0x556AC234)
 I (STM32F401-Discovery\..\gyro.h)(0x5555D83F)
 F (.\STM32F401-Discovery\stm32f401_discovery_gyroscope.h)(0x556AC27A)()
-F (.\mag_accel.c)(0x5570121A)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork -I.\STM32F401-Discovery-I "C:\Users\Karol\Documents\AuK\Projekt I2C + sensory\RTE"-I "C:\Users\Karol\Documents\AuK\Projekt I2C + sensory\RTE\Device\STM32F401VCTx"-I "D:\Programy\Na Studia!!\TMP2\Keil_v5\Pack\ARM\CMSIS\4.2.0\CMSIS\Include"-I "D:\Programy\Na Studia!!\TMP2\Keil_v5\Pack\Keil\STM32F4xx_DFP\2.3.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include"-I "D:\Programy\Na Studia!!\TMP2\Keil_v5\Pack\Keil\STM32F4xx_DFP\2.3.0\Drivers\STM32F4xx_HAL_Driver\Inc"-D_RTE_ -DSTM32F401xC-o .\objects\mag_accel.o --omf_browse .\objects\mag_accel.crf --depend .\objects\mag_accel.d)
-I (mag_accel.h)(0x5570121A)
+F (.\mag_accel.c)(0x55704DB5)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork -I.\STM32F401-Discovery-I "C:\Users\Karol\Documents\AuK\Projekt I2C + sensory\RTE"-I "C:\Users\Karol\Documents\AuK\Projekt I2C + sensory\RTE\Device\STM32F401VCTx"-I "D:\Programy\Na Studia!!\TMP2\Keil_v5\Pack\ARM\CMSIS\4.2.0\CMSIS\Include"-I "D:\Programy\Na Studia!!\TMP2\Keil_v5\Pack\Keil\STM32F4xx_DFP\2.3.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include"-I "D:\Programy\Na Studia!!\TMP2\Keil_v5\Pack\Keil\STM32F4xx_DFP\2.3.0\Drivers\STM32F4xx_HAL_Driver\Inc"-D_RTE_ -DSTM32F401xC-o .\objects\mag_accel.o --omf_browse .\objects\mag_accel.crf --depend .\objects\mag_accel.d)
+I (mag_accel.h)(0x55704A1D)
 I (.\STM32F401-Discovery\stm32f401_discovery.h)(0x5555D83F)
 I (D:\Programy\Na Studia!!\TMP2\Keil_v5\Pack\Keil\STM32F4xx_DFP\2.3.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal.h)(0x53AC8160)
 I (C:\Users\Karol\Documents\AuK\Projekt I2C + sensory\RTE\Device\STM32F401VCTx\stm32f4xx_hal_conf.h)(0x5410C55A)
@@ -219,6 +219,7 @@ I (D:\Programy\Na Studia!!\TMP2\Keil_v5\Core\ARM\ARMCC\include\math.h)(0x5419F1D
 I (l3gd20.h)(0x556AC234)
 I (gyro.h)(0x5555D83F)
 I (.\STM32F401-Discovery\stm32f401_discovery_gyroscope.h)(0x556AC27A)
+I (tim_pwm.h)(0x55701672)
 F (.\tim_pwm.c)(0x556F414B)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork -I.\STM32F401-Discovery-I "C:\Users\Karol\Documents\AuK\Projekt I2C + sensory\RTE"-I "C:\Users\Karol\Documents\AuK\Projekt I2C + sensory\RTE\Device\STM32F401VCTx"-I "D:\Programy\Na Studia!!\TMP2\Keil_v5\Pack\ARM\CMSIS\4.2.0\CMSIS\Include"-I "D:\Programy\Na Studia!!\TMP2\Keil_v5\Pack\Keil\STM32F4xx_DFP\2.3.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include"-I "D:\Programy\Na Studia!!\TMP2\Keil_v5\Pack\Keil\STM32F4xx_DFP\2.3.0\Drivers\STM32F4xx_HAL_Driver\Inc"-D_RTE_ -DSTM32F401xC-o .\objects\tim_pwm.o --omf_browse .\objects\tim_pwm.crf --depend .\objects\tim_pwm.d)
 I (tim_pwm.h)(0x55701672)
 I (D:\Programy\Na Studia!!\TMP2\Keil_v5\Pack\Keil\STM32F4xx_DFP\2.3.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal.h)(0x53AC8160)
