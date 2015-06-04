@@ -21,37 +21,36 @@ int main() {
 	
 	HAL_Init();
 	LED_Init();
-	//BSP_PB_Init(BUTTON_KEY, BUTTON_MODE_EXTI);
-	timer_init();
-	pwm_ch1_init();
-	pwm_ch2_init();
-	//pwm_ch3_init();
-	//pwm_ch4_init();
+	BSP_PB_Init(BUTTON_KEY, BUTTON_MODE_EXTI);
+	//timer_init();
+	//pwm_init(1);
+	//pwm_init(2);
+	//pwm_init(3);
+	//pwm_init(4);
 	
-	
-	//accel_gyro_Init(data);
+	accel_gyro_Init(data);
 
 
 	tick = 0; 
-	//GyroAngle(Data);
+	GyroAngle(Data);
 
 	//}
 	while(1)
 	{	
 		
-		if(BSP_PB_GetState(BUTTON_KEY) == 1) {
-			pwm_ch1_dim(1000 , 1);	
-			pwm_ch1_dim(0, 2);
-			pwm_ch1_dim(0, 3);
-			pwm_ch1_dim(0, 4);
+	/*	if(BSP_PB_GetState(BUTTON_KEY) == 1) {
+			pwm_ch_dim(1000 , 1);	
+			pwm_ch_dim(0, 2);
+			pwm_ch_dim(0, 3);
+			pwm_ch_dim(0, 4);
 		}
 		else {
-			pwm_ch1_dim(0, 1);
-			pwm_ch1_dim(1000, 2);
-			pwm_ch1_dim(1000, 3);
-			pwm_ch1_dim(1000, 4);
+			pwm_ch_dim(0, 1);
+			pwm_ch_dim(1000, 2);
+			pwm_ch_dim(1000, 3);
+			pwm_ch_dim(1000, 4);
 		}
-		
+		*/
 	}
 	
 	return 0;

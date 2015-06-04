@@ -60,10 +60,10 @@ void GyroAngle(float *angle) {
 	
 	compute_Gyro_RT_Data(gyroBias);
 	timer_init();
-	pwm_ch1_init();
-	//pwm_ch2_init();
-	pwm_ch3_init();
-	pwm_ch4_init();
+	pwm_init(1);
+	//pwm_init(2);
+	pwm_init(3);
+	pwm_init(4);
 	
 	//angle2[0] = angle2[1] = angle2[2] = 0;
 	while(!button_flag){
@@ -116,9 +116,9 @@ void GyroAngle(float *angle) {
 	
 	
 	
-		pwm_ch1_dim((angle2[0]+50)*10 , 1);	
-		pwm_ch1_dim((angle2[1]+50)*10 , 3);
-		pwm_ch1_dim((temp+50)*10 , 4);
+		pwm_ch_dim((angle2[0]+50)*10 , 1);	
+		pwm_ch_dim((angle2[1]+50)*10 , 3);
+		pwm_ch_dim((temp+50)*10 , 4);
 		
 	delay(20);
 	}	

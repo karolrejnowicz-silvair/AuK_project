@@ -1,12 +1,5 @@
 #include "tim_pwm.h"
-
-
-
-		
-uint16_t CCR1_Val = 400;
-//uint16_t CCR2_Val = 174;
-uint16_t CCR3_Val = 116;
-uint16_t CCR4_Val = 58;  
+  
 uint16_t PrescalerValue = 4000;
 
 TIM_Base_InitTypeDef TIM_TimeBaseStructure;
@@ -53,16 +46,15 @@ void timer_init(void){
 		
 		__TIM4_CLK_ENABLE();
 		
-		
 		TIM4_Handle.Instance = TIM4;
+		
 		/* Time base configuration */
 		TIM4_Handle.Init.Period = 1000; //8399;		
 		TIM4_Handle.Init.Prescaler = 240;//PrescalerValue;
 		TIM4_Handle.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1 ;
 		TIM4_Handle.Init.CounterMode = TIM_COUNTERMODE_UP;
-		TIM4->CNT = 0;
-		HAL_TIM_Base_Init(&TIM4_Handle);
 		
+		HAL_TIM_Base_Init(&TIM4_Handle);
 		HAL_TIM_Base_Start_IT(&TIM4_Handle); // start timer interrupts
 		
 		//HAL_NVIC_SetPriority(TIM4_IRQn, 0, 1);
@@ -102,25 +94,14 @@ void pwm_init(int channel){
 	
 }
 	
-void pwm_ch1_init(void){
-		/* PWM1 Mode configuration: Channel1 */
-		TIM_OCInitStructure.OCMode = TIM_OCMODE_PWM1;
-	 // TIM_OCInitStructure.OCIdleState = TIM_OUTPUTSTATE_ENABLE;
-		TIM_OCInitStructure.Pulse = 0;//CCR1_Val;
-		TIM_OCInitStructure.OCPolarity = TIM_OCPOLARITY_HIGH;
-		TIM_OCInitStructure.OCFastMode = TIM_OCFAST_DISABLE;
-		
-		HAL_TIM_PWM_ConfigChannel(&TIM4_Handle, &TIM_OCInitStructure, TIM_CHANNEL_1);
-		TIM_CCxChannelCmd(TIM4, TIM_CHANNEL_1, TIM_CCx_ENABLE);
-	//	HAL_TIMEx_PWMN_Start(&TIM4_Handle, TIM_CHANNEL_1);
-}
 
-void pwm_ch1_dim( int val, int channel ){
+
+void pwm_ch_dim( int val, int channel ){
 	
 	switch(channel){
 		
 		case 1:
-				TIM4->CCR1 = val;
+				TIM4->CCR1 = val; // = TIM_OCInitStructure.Pulse
 				break;
 		case 2:
 				TIM4->CCR2= val;
@@ -138,42 +119,7 @@ void pwm_ch1_dim( int val, int channel ){
 	return;
 }
 
-void pwm_ch2_init(void){
-		/* PWM1 Mode configuration: Channel2 */
-		TIM_OCInitStructure.OCMode = TIM_OCMODE_PWM1;
-		//TIM_OCInitStructure.OCIdleState = TIM_OUTPUTSTATE_ENABLE;
-		TIM_OCInitStructure.Pulse = 1000;//CCR2_Val;
-		TIM_OCInitStructure.OCPolarity = TIM_OCPOLARITY_HIGH;
-		
-		HAL_TIM_PWM_ConfigChannel(&TIM4_Handle, &TIM_OCInitStructure, TIM_CHANNEL_2);
-		TIM_CCxChannelCmd(TIM4, TIM_CHANNEL_2, TIM_CCx_ENABLE);
-		//HAL_TIMEx_PWMN_Start(&TIM4_Handle, TIM_CHANNEL_2);
 
-}
-
-void pwm_ch3_init(void){
-		/* PWM1 Mode configuration: Channel3 */
-		TIM_OCInitStructure.OCMode = TIM_OCMODE_PWM1;
-	//	TIM_OCInitStructure.OCIdleState = TIM_OUTPUTSTATE_ENABLE;
-		TIM_OCInitStructure.Pulse = CCR3_Val;
-		TIM_OCInitStructure.OCPolarity = TIM_OCPOLARITY_HIGH;
-		
-		HAL_TIM_PWM_ConfigChannel(&TIM4_Handle, &TIM_OCInitStructure, TIM_CHANNEL_3);
-		TIM_CCxChannelCmd(TIM4, TIM_CHANNEL_3, TIM_CCx_ENABLE);
-		//HAL_TIMEx_PWMN_Start(&TIM4_Handle, TIM_CHANNEL_3);
-}
-
-void pwm_ch4_init(void){
-		/* PWM1 Mode configuration: Channel4 */
-		TIM_OCInitStructure.OCMode = TIM_OCMODE_PWM1;
-	//	TIM_OCInitStructure.OCIdleState = TIM_OUTPUTSTATE_ENABLE;
-		TIM_OCInitStructure.Pulse = CCR4_Val;
-		TIM_OCInitStructure.OCPolarity = TIM_OCPOLARITY_HIGH;
-		
-		HAL_TIM_PWM_ConfigChannel(&TIM4_Handle, &TIM_OCInitStructure, TIM_CHANNEL_4);
-		TIM_CCxChannelCmd(TIM4, TIM_CHANNEL_4, TIM_CCx_ENABLE);
-	//	HAL_TIMEx_PWMN_Start(&TIM4_Handle, TIM_CHANNEL_4);
-}
 		
 
 
