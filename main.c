@@ -11,7 +11,7 @@
 void LED_Init(void);
 void delay(int milisec);
 
-
+uint8_t button_flag = 0;
 int tick = 0;
 
 int main() {
@@ -21,7 +21,12 @@ int main() {
 	
 	HAL_Init();
 	LED_Init();
-	
+	//BSP_PB_Init(BUTTON_KEY, BUTTON_MODE_GPIO);
+	//timer_init();
+	//pwm_ch1_init();
+	//pwm_ch2_init();
+	//pwm_ch3_init();
+	//pwm_ch4_init();
 	
 	
 	accel_gyro_Init(data);
@@ -32,7 +37,21 @@ int main() {
 
 	//}
 	while(1)
-	{				
+	{	
+		
+	/*	if(BSP_PB_GetState(BUTTON_KEY) == 1) {
+			pwm_ch1_dim(1000 , 1);	
+			pwm_ch1_dim(0, 2);
+			pwm_ch1_dim(0, 3);
+			pwm_ch1_dim(0, 4);
+		}
+		else {
+			pwm_ch1_dim(0, 1);
+			pwm_ch1_dim(1000, 2);
+			pwm_ch1_dim(1000, 3);
+			pwm_ch1_dim(1000, 4);
+		}
+		*/
 	}
 	
 	return 0;
@@ -85,3 +104,14 @@ void SysTick_Handler(void)
     tick++;     
 } /* SysTick_Handler */
 
+
+void EXTI0_IRQHandler(void)
+{
+  // Check if EXTI line interrupt was detected
+  if(__HAL_GPIO_EXTI_GET_IT(GPIO_PIN_0) != RESET)  {
+    // Clear the interrupt (has to be done for EXTI)
+    __HAL_GPIO_EXTI_CLEAR_IT(GPIO_PIN_0);
+    // Toggle LED
+    button_flag = 1;
+  }
+}

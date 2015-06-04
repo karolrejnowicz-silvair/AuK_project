@@ -1,6 +1,7 @@
 #include "mag_accel.h"
 
 extern int tick;
+extern uint8_t button_flag;
 
 void accel_gyro_Init(uint8_t *status) {
 	
