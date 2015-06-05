@@ -1,11 +1,8 @@
 
 #include "stm32f4xx_hal.h"
 #include "stm32f401_discovery.h"
-#include "lsm303dlhc.h"
-#include "stm32f401_discovery_accelerometer.h"
 #include "math.h"
-#include "mag_accel.h"
-//#include "tim_pwm.h"
+#include "app.h"
 
 
 void LED_Init(void);
@@ -18,39 +15,21 @@ int main() {
 
 	uint8_t data[2] = {0, 0};
 	float Data[3] = {0, 0, 0};
+	float GyroError[3] = {0.0f, 0.0f, 0.0f };
 	
 	HAL_Init();
 	LED_Init();
 	BSP_PB_Init(BUTTON_KEY, BUTTON_MODE_EXTI);
-	//timer_init();
-	//pwm_init(1);
-	//pwm_init(2);
-	//pwm_init(3);
-	//pwm_init(4);
 	
-	accel_gyro_Init(data);
-
+	accel_gyro_Init(data, GyroError);
+	PWM_Init();
 
 	tick = 0; 
-	GyroAngle(Data);
+	GetXYZangle(Data, GyroError);
 
-	//}
 	while(1)
 	{	
 		
-	/*	if(BSP_PB_GetState(BUTTON_KEY) == 1) {
-			pwm_ch_dim(1000 , 1);	
-			pwm_ch_dim(0, 2);
-			pwm_ch_dim(0, 3);
-			pwm_ch_dim(0, 4);
-		}
-		else {
-			pwm_ch_dim(0, 1);
-			pwm_ch_dim(1000, 2);
-			pwm_ch_dim(1000, 3);
-			pwm_ch_dim(1000, 4);
-		}
-		*/
 	}
 	
 	return 0;
