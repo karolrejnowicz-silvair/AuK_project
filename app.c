@@ -31,8 +31,9 @@ void GetXYZangle(float *angle, float *gyroBias) {
 	static float sinAngle, cosAngle;
 	static float temp = 0.0f;
 
-
-	while(!button_flag){ //jesli przycisk nie zostal wcisniety
+	pwm_ch_dim(700, 2); // - sluzy do deugowania zeby wiedziec czy po nacisnieciu guzika wszedlismy do funkcji
+	
+	while(!HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_0)){ //jesli przycisk nie zostal wcisniety
 
 	lastValue[2] = currentValue[2]; //wpisz obecna wartosc jako poprzednia
 	
@@ -80,5 +81,9 @@ void GetXYZangle(float *angle, float *gyroBias) {
 		
 	delay(20); //odczekaj 20ms
 	}	 
-	button_flag = 0; 	//jesli wcisniety przycisk i wyjdzie z petli, wyzeruj flage
+	
+	delay(250);
+	pwm_ch_dim(0, 2);// - sluzy do deugowania zeby wiedziec czy po nacisnieciu guzika wszedlismy do funkcji
+	
+//	button_flag = 0; 	//jesli wcisniety przycisk i wyjdzie z petli, wyzeruj flage
 }

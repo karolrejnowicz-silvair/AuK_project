@@ -6,30 +6,39 @@
 
 
 void LED_Init(void);
+void BUTTON_Init(void);
 void delay(int milisec);
 
 uint8_t button_flag = 0;
 int tick = 0;
+int button = 0;
 
 int main() {
 
 	uint8_t data[2] = {0, 0};
 	float Data[3] = {0, 0, 0};
 	float GyroError[3] = {0.0f, 0.0f, 0.0f };
+	tick = 0; 
+	
 	
 	HAL_Init();
 	LED_Init();
+	BUTTON_Init();
 	BSP_PB_Init(BUTTON_KEY, BUTTON_MODE_EXTI);
-	
-	accel_gyro_Init(data, GyroError);
 	PWM_Init();
-
-	tick = 0; 
+	
+	pwm_init(2);
+	
+	
+RESET:	
+	accel_gyro_Init(data, GyroError);
 	GetXYZangle(Data, GyroError);
 
 	while(1)
 	{	
-		
+		if (HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_0)) {
+				goto RESET;
+		}
 	}
 	
 	return 0;
@@ -72,14 +81,29 @@ void delay(int milisec)
 	}  
 } /* delay */
 
-
+void BUTTON_Init(void)
+{
+  GPIO_InitTypeDef GPIO_InitStruct;
+ 
+  // GPIO Ports Clock Enable
+  __GPIOA_CLK_ENABLE();
+ 
+  // Configure GPIO pin PA0
+  GPIO_InitStruct.Pin   = GPIO_PIN_2;
+  GPIO_InitStruct.Mode  = GPIO_MODE_INPUT;        // input
+  GPIO_InitStruct.Pull  = GPIO_NOPULL;              // pull-up enabled
+  GPIO_InitStruct.Speed = GPIO_SPEED_LOW;             // analog pin bandwidth limited
+  HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+        
+} /* BUTTON_Init */
 
 /**
  * System Tick Interrupt Service Routine 
  */
 void SysTick_Handler(void)
 {
-    tick++;     
+    tick++;
+		button++;	
 } /* SysTick_Handler */
 
 
