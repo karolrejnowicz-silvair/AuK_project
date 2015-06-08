@@ -8,6 +8,7 @@ void PWM_Init(void) {
 	
 	timer_init();
 	pwm_init(1);
+	pwm_init(2);
 	pwm_init(3);
 	pwm_init(4);
 	
@@ -32,6 +33,7 @@ void GetXYZangle(float *angle, float *gyroBias) {
 	static float temp = 0.0f;
 
 	pwm_ch_dim(700, 2); // - sluzy do deugowania zeby wiedziec czy po nacisnieciu guzika wszedlismy do funkcji
+	angle2[2] = 0;
 	
 	while(!HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_0)){ //jesli przycisk nie zostal wcisniety
 

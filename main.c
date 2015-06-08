@@ -26,8 +26,8 @@ int main() {
 	BUTTON_Init();
 	BSP_PB_Init(BUTTON_KEY, BUTTON_MODE_EXTI);
 	PWM_Init();
-	
-	pwm_init(2);
+	accel_gyro_Init(data, GyroError);
+	GetXYZangle(Data, GyroError);
 
 	while(1)
 	{	
@@ -35,7 +35,7 @@ int main() {
 			if (HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_0)) {
 					delay(20);
                     if (HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_0)) {
-                           accel_gyro_Init(data, GyroError);
+													 delay(100);
 	                         GetXYZangle(Data, GyroError);
                     }
 				
