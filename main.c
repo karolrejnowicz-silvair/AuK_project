@@ -14,7 +14,7 @@ int tick = 0;
 int button = 0;
 
 int main() {
-
+	
 	uint8_t data[2] = {0, 0};
 	float Data[3] = {0, 0, 0};
 	float GyroError[3] = {0.0f, 0.0f, 0.0f };
@@ -28,17 +28,18 @@ int main() {
 	PWM_Init();
 	
 	pwm_init(2);
-	
-	
-RESET:	
-	accel_gyro_Init(data, GyroError);
-	GetXYZangle(Data, GyroError);
 
 	while(1)
 	{	
-		if (HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_0)) {
-				goto RESET;
-		}
+			tick = 0;
+			if (HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_0)) {
+					delay(20);
+                    if (HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_0)) {
+                           accel_gyro_Init(data, GyroError);
+	                         GetXYZangle(Data, GyroError);
+                    }
+				
+			}
 	}
 	
 	return 0;

@@ -1,6 +1,6 @@
 #include "app.h"
 
-
+extern int tick;
 /*
 Funkcja inicjalizujaca PWM 
 */
@@ -82,8 +82,8 @@ void GetXYZangle(float *angle, float *gyroBias) {
 	delay(20); //odczekaj 20ms
 	}	 
 	
+	tick = 0;
 	delay(250);
 	pwm_ch_dim(0, 2);// - sluzy do deugowania zeby wiedziec czy po nacisnieciu guzika wszedlismy do funkcji
 	
-//	button_flag = 0; 	//jesli wcisniety przycisk i wyjdzie z petli, wyzeruj flage
 }

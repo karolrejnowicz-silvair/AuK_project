@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\Objects\pierwszy.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\Objects\pierwszy.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5050041: Last Updated: Sun Jun 07 19:30:21 2015
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5050041: Last Updated: Mon Jun 08 17:00:58 2015
 <BR><P>
 <H3>Maximum Stack Usage =        184 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -277,6 +277,12 @@ Global Symbols
 <BR><BR>[Calls]<UL><LI><a href="#[7e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_sys_exit
 </UL>
 
+<P><STRONG><a name="[87]"></a>delay</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, main.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;compute_Gyro_RT_Data
+<LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GetXYZangle
+<LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+</UL>
+
 <P><STRONG><a name="[7f]"></a>BUTTON_Init</STRONG> (Thumb, 40 bytes, Stack size 24 bytes, main.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 44<LI>Call Chain = BUTTON_Init &rArr; HAL_GPIO_Init
 </UL>
@@ -293,25 +299,21 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[79]"></a>main</STRONG> (Thumb, 86 bytes, Stack size 32 bytes, main.o(.text))
+<P><STRONG><a name="[79]"></a>main</STRONG> (Thumb, 104 bytes, Stack size 32 bytes, main.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 112<LI>Call Chain = main &rArr; BSP_PB_Init &rArr; HAL_NVIC_SetPriority &rArr; NVIC_SetPriority
 </UL>
 <BR>[Calls]<UL><LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pwm_init
-<LI><a href="#[86]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;accel_gyro_Init
+<LI><a href="#[88]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;accel_gyro_Init
 <LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PWM_Init
 <LI><a href="#[82]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Init
-<LI><a href="#[88]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_ReadPin
-<LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GetXYZangle
+<LI><a href="#[86]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_ReadPin
+<LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GetXYZangle
 <LI><a href="#[83]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_PB_Init
 <LI><a href="#[81]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LED_Init
 <LI><a href="#[7f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BUTTON_Init
+<LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay
 </UL>
 <BR>[Called By]<UL><LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_entry_main
-</UL>
-
-<P><STRONG><a name="[c3]"></a>delay</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, main.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;compute_Gyro_RT_Data
-<LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GetXYZangle
 </UL>
 
 <P><STRONG><a name="[b]"></a>SysTick_Handler</STRONG> (Thumb, 22 bytes, Stack size 0 bytes, main.o(.text))
@@ -322,53 +324,53 @@ Global Symbols
 </UL>
 <P><STRONG><a name="[1c7]"></a>BSP_GetVersion</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, stm32f401_discovery.o(.text), UNUSED)
 
-<P><STRONG><a name="[89]"></a>BSP_LED_Init</STRONG> (Thumb, 122 bytes, Stack size 32 bytes, stm32f401_discovery.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[8a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
+<P><STRONG><a name="[8a]"></a>BSP_LED_Init</STRONG> (Thumb, 122 bytes, Stack size 32 bytes, stm32f401_discovery.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[8b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
 <LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_Init
 </UL>
 
-<P><STRONG><a name="[8b]"></a>BSP_LED_On</STRONG> (Thumb, 24 bytes, Stack size 8 bytes, stm32f401_discovery.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[8a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
+<P><STRONG><a name="[8c]"></a>BSP_LED_On</STRONG> (Thumb, 24 bytes, Stack size 8 bytes, stm32f401_discovery.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[8b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
 </UL>
 
-<P><STRONG><a name="[8c]"></a>BSP_LED_Off</STRONG> (Thumb, 24 bytes, Stack size 8 bytes, stm32f401_discovery.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[8a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
+<P><STRONG><a name="[8d]"></a>BSP_LED_Off</STRONG> (Thumb, 24 bytes, Stack size 8 bytes, stm32f401_discovery.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[8b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
 </UL>
 
-<P><STRONG><a name="[8d]"></a>BSP_LED_Toggle</STRONG> (Thumb, 22 bytes, Stack size 8 bytes, stm32f401_discovery.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[8e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_TogglePin
+<P><STRONG><a name="[8e]"></a>BSP_LED_Toggle</STRONG> (Thumb, 22 bytes, Stack size 8 bytes, stm32f401_discovery.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[8f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_TogglePin
 </UL>
 
 <P><STRONG><a name="[83]"></a>BSP_PB_Init</STRONG> (Thumb, 128 bytes, Stack size 32 bytes, stm32f401_discovery.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 80<LI>Call Chain = BSP_PB_Init &rArr; HAL_NVIC_SetPriority &rArr; NVIC_SetPriority
 </UL>
-<BR>[Calls]<UL><LI><a href="#[8f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_NVIC_SetPriority
-<LI><a href="#[90]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_NVIC_EnableIRQ
+<BR>[Calls]<UL><LI><a href="#[90]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_NVIC_SetPriority
+<LI><a href="#[91]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_NVIC_EnableIRQ
 <LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_Init
 </UL>
 <BR>[Called By]<UL><LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[91]"></a>BSP_PB_GetState</STRONG> (Thumb, 22 bytes, Stack size 8 bytes, stm32f401_discovery.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[88]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_ReadPin
+<P><STRONG><a name="[92]"></a>BSP_PB_GetState</STRONG> (Thumb, 22 bytes, Stack size 8 bytes, stm32f401_discovery.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[86]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_ReadPin
 </UL>
 
-<P><STRONG><a name="[a4]"></a>GYRO_IO_Init</STRONG> (Thumb, 94 bytes, Stack size 24 bytes, stm32f401_discovery.o(.text))
+<P><STRONG><a name="[a5]"></a>GYRO_IO_Init</STRONG> (Thumb, 94 bytes, Stack size 24 bytes, stm32f401_discovery.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 84<LI>Call Chain = GYRO_IO_Init &rArr; SPIx_Init &rArr; SPIx_MspInit &rArr; HAL_GPIO_Init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[8a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
-<LI><a href="#[9d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPIx_Init
+<BR>[Calls]<UL><LI><a href="#[8b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
+<LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPIx_Init
 <LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_Init
 </UL>
 <BR>[Called By]<UL><LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;L3GD20_ReadID
 <LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;L3GD20_Init
 </UL>
 
-<P><STRONG><a name="[a5]"></a>GYRO_IO_Write</STRONG> (Thumb, 62 bytes, Stack size 16 bytes, stm32f401_discovery.o(.text))
+<P><STRONG><a name="[a6]"></a>GYRO_IO_Write</STRONG> (Thumb, 62 bytes, Stack size 16 bytes, stm32f401_discovery.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 100<LI>Call Chain = GYRO_IO_Write &rArr; SPIx_WriteRead &rArr; SPIx_Error &rArr; SPIx_Init &rArr; SPIx_MspInit &rArr; HAL_GPIO_Init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[8a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
-<LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPIx_WriteRead
+<BR>[Calls]<UL><LI><a href="#[8b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
+<LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPIx_WriteRead
 </UL>
 <BR>[Called By]<UL><LI><a href="#[6b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;L3GD20_FilterCmd
 <LI><a href="#[6a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;L3GD20_FilterConfig
@@ -379,14 +381,14 @@ Global Symbols
 <LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;L3GD20_Init
 </UL>
 
-<P><STRONG><a name="[a6]"></a>GYRO_IO_Read</STRONG> (Thumb, 138 bytes, Stack size 16 bytes, stm32f401_discovery.o(.text))
+<P><STRONG><a name="[a7]"></a>GYRO_IO_Read</STRONG> (Thumb, 138 bytes, Stack size 16 bytes, stm32f401_discovery.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 100<LI>Call Chain = GYRO_IO_Read &rArr; SPIx_WriteRead &rArr; SPIx_Error &rArr; SPIx_Init &rArr; SPIx_MspInit &rArr; HAL_GPIO_Init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[8a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
-<LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPIx_WriteRead
+<BR>[Calls]<UL><LI><a href="#[8b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
+<LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPIx_WriteRead
 </UL>
 <BR>[Called By]<UL><LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;L3GD20_ReadXYZAngRate
-<LI><a href="#[c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;L3GD20_GetDataStatus
+<LI><a href="#[c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;L3GD20_GetDataStatus
 <LI><a href="#[6b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;L3GD20_FilterCmd
 <LI><a href="#[6a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;L3GD20_FilterConfig
 <LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;L3GD20_DisableIT
@@ -396,95 +398,95 @@ Global Symbols
 <LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;L3GD20_ReadID
 </UL>
 
-<P><STRONG><a name="[a7]"></a>AUDIO_IO_Init</STRONG> (Thumb, 80 bytes, Stack size 24 bytes, stm32f401_discovery.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[8a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
-<LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Delay
-<LI><a href="#[93]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2Cx_Init
+<P><STRONG><a name="[a8]"></a>AUDIO_IO_Init</STRONG> (Thumb, 80 bytes, Stack size 24 bytes, stm32f401_discovery.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[8b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
+<LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Delay
+<LI><a href="#[94]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2Cx_Init
 <LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_Init
 </UL>
 
-<P><STRONG><a name="[a9]"></a>AUDIO_IO_Write</STRONG> (Thumb, 20 bytes, Stack size 16 bytes, stm32f401_discovery.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[98]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2Cx_WriteData
+<P><STRONG><a name="[aa]"></a>AUDIO_IO_Write</STRONG> (Thumb, 20 bytes, Stack size 16 bytes, stm32f401_discovery.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[99]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2Cx_WriteData
 </UL>
 
-<P><STRONG><a name="[aa]"></a>AUDIO_IO_Read</STRONG> (Thumb, 16 bytes, Stack size 16 bytes, stm32f401_discovery.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[9a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2Cx_ReadData
+<P><STRONG><a name="[ab]"></a>AUDIO_IO_Read</STRONG> (Thumb, 16 bytes, Stack size 16 bytes, stm32f401_discovery.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[9b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2Cx_ReadData
 </UL>
 
-<P><STRONG><a name="[ab]"></a>COMPASSACCELERO_IO_Init</STRONG> (Thumb, 46 bytes, Stack size 24 bytes, stm32f401_discovery.o(.text))
+<P><STRONG><a name="[ac]"></a>COMPASSACCELERO_IO_Init</STRONG> (Thumb, 46 bytes, Stack size 24 bytes, stm32f401_discovery.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 112<LI>Call Chain = COMPASSACCELERO_IO_Init &rArr; I2Cx_Init &rArr; I2Cx_MspInit &rArr; HAL_NVIC_SetPriority &rArr; NVIC_SetPriority
 </UL>
-<BR>[Calls]<UL><LI><a href="#[93]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2Cx_Init
+<BR>[Calls]<UL><LI><a href="#[94]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2Cx_Init
 <LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_Init
 </UL>
 <BR>[Called By]<UL><LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LSM303DLHC_AccReadID
 <LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LSM303DLHC_AccInit
-<LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LSM303DLHC_MagReadID
+<LI><a href="#[b1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LSM303DLHC_MagReadID
 </UL>
 
-<P><STRONG><a name="[ac]"></a>COMPASSACCELERO_IO_ITConfig</STRONG> (Thumb, 60 bytes, Stack size 24 bytes, stm32f401_discovery.o(.text))
+<P><STRONG><a name="[ad]"></a>COMPASSACCELERO_IO_ITConfig</STRONG> (Thumb, 60 bytes, Stack size 24 bytes, stm32f401_discovery.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = COMPASSACCELERO_IO_ITConfig &rArr; HAL_NVIC_SetPriority &rArr; NVIC_SetPriority
 </UL>
-<BR>[Calls]<UL><LI><a href="#[8f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_NVIC_SetPriority
-<LI><a href="#[90]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_NVIC_EnableIRQ
+<BR>[Calls]<UL><LI><a href="#[90]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_NVIC_SetPriority
+<LI><a href="#[91]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_NVIC_EnableIRQ
 <LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_Init
 </UL>
 <BR>[Called By]<UL><LI><a href="#[60]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LSM303DLHC_AccZClickITConfig
 </UL>
 
-<P><STRONG><a name="[ad]"></a>COMPASSACCELERO_IO_Write</STRONG> (Thumb, 20 bytes, Stack size 16 bytes, stm32f401_discovery.o(.text))
+<P><STRONG><a name="[ae]"></a>COMPASSACCELERO_IO_Write</STRONG> (Thumb, 20 bytes, Stack size 16 bytes, stm32f401_discovery.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 152<LI>Call Chain = COMPASSACCELERO_IO_Write &rArr; I2Cx_WriteData &rArr; I2Cx_Error &rArr; I2Cx_Init &rArr; I2Cx_MspInit &rArr; HAL_NVIC_SetPriority &rArr; NVIC_SetPriority
 </UL>
-<BR>[Calls]<UL><LI><a href="#[98]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2Cx_WriteData
+<BR>[Calls]<UL><LI><a href="#[99]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2Cx_WriteData
 </UL>
-<BR>[Called By]<UL><LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LSM303DLHC_AccClickITDisable
-<LI><a href="#[bd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LSM303DLHC_AccClickITEnable
-<LI><a href="#[bc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LSM303DLHC_AccINT2InterruptDisable
-<LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LSM303DLHC_AccINT2InterruptEnable
-<LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LSM303DLHC_AccINT1InterruptDisable
-<LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LSM303DLHC_AccINT1InterruptEnable
-<LI><a href="#[b8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LSM303DLHC_AccIT2Disable
-<LI><a href="#[b7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LSM303DLHC_AccIT2Enable
-<LI><a href="#[b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LSM303DLHC_AccIT1Disable
-<LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LSM303DLHC_AccIT1Enable
-<LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LSM303DLHC_AccFilterClickCmd
+<BR>[Called By]<UL><LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LSM303DLHC_AccClickITDisable
+<LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LSM303DLHC_AccClickITEnable
+<LI><a href="#[bd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LSM303DLHC_AccINT2InterruptDisable
+<LI><a href="#[bc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LSM303DLHC_AccINT2InterruptEnable
+<LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LSM303DLHC_AccINT1InterruptDisable
+<LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LSM303DLHC_AccINT1InterruptEnable
+<LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LSM303DLHC_AccIT2Disable
+<LI><a href="#[b8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LSM303DLHC_AccIT2Enable
+<LI><a href="#[b7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LSM303DLHC_AccIT1Disable
+<LI><a href="#[b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LSM303DLHC_AccIT1Enable
+<LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LSM303DLHC_AccFilterClickCmd
 <LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LSM303DLHC_AccFilterCmd
 <LI><a href="#[61]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LSM303DLHC_AccFilterConfig
 <LI><a href="#[5f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LSM303DLHC_AccRebootCmd
 <LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LSM303DLHC_AccInit
-<LI><a href="#[b1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LSM303DLHC_MagInit
+<LI><a href="#[b2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LSM303DLHC_MagInit
 </UL>
 
-<P><STRONG><a name="[ae]"></a>COMPASSACCELERO_IO_Read</STRONG> (Thumb, 16 bytes, Stack size 16 bytes, stm32f401_discovery.o(.text))
+<P><STRONG><a name="[af]"></a>COMPASSACCELERO_IO_Read</STRONG> (Thumb, 16 bytes, Stack size 16 bytes, stm32f401_discovery.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 144<LI>Call Chain = COMPASSACCELERO_IO_Read &rArr; I2Cx_ReadData &rArr; I2Cx_Error &rArr; I2Cx_Init &rArr; I2Cx_MspInit &rArr; HAL_NVIC_SetPriority &rArr; NVIC_SetPriority
 </UL>
-<BR>[Calls]<UL><LI><a href="#[9a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2Cx_ReadData
+<BR>[Calls]<UL><LI><a href="#[9b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2Cx_ReadData
 </UL>
-<BR>[Called By]<UL><LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LSM303DLHC_MagGetDataStatus
-<LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LSM303DLHC_AccClickITDisable
-<LI><a href="#[bd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LSM303DLHC_AccClickITEnable
-<LI><a href="#[bc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LSM303DLHC_AccINT2InterruptDisable
-<LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LSM303DLHC_AccINT2InterruptEnable
-<LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LSM303DLHC_AccINT1InterruptDisable
-<LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LSM303DLHC_AccINT1InterruptEnable
-<LI><a href="#[b8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LSM303DLHC_AccIT2Disable
-<LI><a href="#[b7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LSM303DLHC_AccIT2Enable
-<LI><a href="#[b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LSM303DLHC_AccIT1Disable
-<LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LSM303DLHC_AccIT1Enable
-<LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LSM303DLHC_AccFilterClickCmd
+<BR>[Called By]<UL><LI><a href="#[c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LSM303DLHC_MagGetDataStatus
+<LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LSM303DLHC_AccClickITDisable
+<LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LSM303DLHC_AccClickITEnable
+<LI><a href="#[bd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LSM303DLHC_AccINT2InterruptDisable
+<LI><a href="#[bc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LSM303DLHC_AccINT2InterruptEnable
+<LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LSM303DLHC_AccINT1InterruptDisable
+<LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LSM303DLHC_AccINT1InterruptEnable
+<LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LSM303DLHC_AccIT2Disable
+<LI><a href="#[b8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LSM303DLHC_AccIT2Enable
+<LI><a href="#[b7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LSM303DLHC_AccIT1Disable
+<LI><a href="#[b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LSM303DLHC_AccIT1Enable
+<LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LSM303DLHC_AccFilterClickCmd
 <LI><a href="#[63]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LSM303DLHC_AccReadXYZ
 <LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LSM303DLHC_AccFilterCmd
 <LI><a href="#[61]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LSM303DLHC_AccFilterConfig
 <LI><a href="#[5f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LSM303DLHC_AccRebootCmd
 <LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LSM303DLHC_AccReadID
-<LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LSM303DLHC_MagReadXYZ
-<LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LSM303DLHC_MagReadID
+<LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LSM303DLHC_MagReadXYZ
+<LI><a href="#[b1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LSM303DLHC_MagReadID
 </UL>
 
 <P><STRONG><a name="[c4]"></a>BSP_ACCELERO_Init</STRONG> (Thumb, 184 bytes, Stack size 24 bytes, stm32f401_discovery_accelerometer.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = BSP_ACCELERO_Init
 </UL>
-<BR>[Called By]<UL><LI><a href="#[86]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;accel_gyro_Init
+<BR>[Called By]<UL><LI><a href="#[88]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;accel_gyro_Init
 </UL>
 
 <P><STRONG><a name="[1c8]"></a>BSP_ACCELERO_Reset</STRONG> (Thumb, 20 bytes, Stack size 8 bytes, stm32f401_discovery_accelerometer.o(.text), UNUSED)
@@ -494,244 +496,244 @@ Global Symbols
 <P><STRONG><a name="[cd]"></a>BSP_ACCELERO_GetXYZ</STRONG> (Thumb, 50 bytes, Stack size 16 bytes, stm32f401_discovery_accelerometer.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = BSP_ACCELERO_GetXYZ
 </UL>
-<BR>[Called By]<UL><LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GetXYZangle
+<BR>[Called By]<UL><LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GetXYZangle
 </UL>
 
-<P><STRONG><a name="[af]"></a>BSP_MAGNETO_Init</STRONG> (Thumb, 52 bytes, Stack size 16 bytes, stm32f401_discovery_accelerometer.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LSM303DLHC_MagReadID
-<LI><a href="#[b1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LSM303DLHC_MagInit
+<P><STRONG><a name="[b0]"></a>BSP_MAGNETO_Init</STRONG> (Thumb, 52 bytes, Stack size 16 bytes, stm32f401_discovery_accelerometer.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[b1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LSM303DLHC_MagReadID
+<LI><a href="#[b2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LSM303DLHC_MagInit
 </UL>
 
-<P><STRONG><a name="[b2]"></a>BSP_MAGNETO_GetXYZ</STRONG> (Thumb, 12 bytes, Stack size 8 bytes, stm32f401_discovery_accelerometer.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LSM303DLHC_MagReadXYZ
+<P><STRONG><a name="[b3]"></a>BSP_MAGNETO_GetXYZ</STRONG> (Thumb, 12 bytes, Stack size 8 bytes, stm32f401_discovery_accelerometer.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LSM303DLHC_MagReadXYZ
 </UL>
 
 <P><STRONG><a name="[5d]"></a>LSM303DLHC_AccInit</STRONG> (Thumb, 38 bytes, Stack size 16 bytes, lsm303dlhc.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 168<LI>Call Chain = LSM303DLHC_AccInit &rArr; COMPASSACCELERO_IO_Write &rArr; I2Cx_WriteData &rArr; I2Cx_Error &rArr; I2Cx_Init &rArr; I2Cx_MspInit &rArr; HAL_NVIC_SetPriority &rArr; NVIC_SetPriority
 </UL>
-<BR>[Calls]<UL><LI><a href="#[ad]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;COMPASSACCELERO_IO_Write
-<LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;COMPASSACCELERO_IO_Init
+<BR>[Calls]<UL><LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;COMPASSACCELERO_IO_Write
+<LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;COMPASSACCELERO_IO_Init
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> lsm303dlhc.o(.data)
 </UL>
 <P><STRONG><a name="[5e]"></a>LSM303DLHC_AccReadID</STRONG> (Thumb, 22 bytes, Stack size 8 bytes, lsm303dlhc.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 152<LI>Call Chain = LSM303DLHC_AccReadID &rArr; COMPASSACCELERO_IO_Read &rArr; I2Cx_ReadData &rArr; I2Cx_Error &rArr; I2Cx_Init &rArr; I2Cx_MspInit &rArr; HAL_NVIC_SetPriority &rArr; NVIC_SetPriority
 </UL>
-<BR>[Calls]<UL><LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;COMPASSACCELERO_IO_Read
-<LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;COMPASSACCELERO_IO_Init
+<BR>[Calls]<UL><LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;COMPASSACCELERO_IO_Read
+<LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;COMPASSACCELERO_IO_Init
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> lsm303dlhc.o(.data)
 </UL>
 <P><STRONG><a name="[5f]"></a>LSM303DLHC_AccRebootCmd</STRONG> (Thumb, 28 bytes, Stack size 8 bytes, lsm303dlhc.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 160<LI>Call Chain = LSM303DLHC_AccRebootCmd &rArr; COMPASSACCELERO_IO_Write &rArr; I2Cx_WriteData &rArr; I2Cx_Error &rArr; I2Cx_Init &rArr; I2Cx_MspInit &rArr; HAL_NVIC_SetPriority &rArr; NVIC_SetPriority
 </UL>
-<BR>[Calls]<UL><LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;COMPASSACCELERO_IO_Read
-<LI><a href="#[ad]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;COMPASSACCELERO_IO_Write
+<BR>[Calls]<UL><LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;COMPASSACCELERO_IO_Read
+<LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;COMPASSACCELERO_IO_Write
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> lsm303dlhc.o(.data)
 </UL>
 <P><STRONG><a name="[61]"></a>LSM303DLHC_AccFilterConfig</STRONG> (Thumb, 32 bytes, Stack size 16 bytes, lsm303dlhc.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 168<LI>Call Chain = LSM303DLHC_AccFilterConfig &rArr; COMPASSACCELERO_IO_Write &rArr; I2Cx_WriteData &rArr; I2Cx_Error &rArr; I2Cx_Init &rArr; I2Cx_MspInit &rArr; HAL_NVIC_SetPriority &rArr; NVIC_SetPriority
 </UL>
-<BR>[Calls]<UL><LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;COMPASSACCELERO_IO_Read
-<LI><a href="#[ad]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;COMPASSACCELERO_IO_Write
+<BR>[Calls]<UL><LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;COMPASSACCELERO_IO_Read
+<LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;COMPASSACCELERO_IO_Write
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> lsm303dlhc.o(.data)
 </UL>
 <P><STRONG><a name="[62]"></a>LSM303DLHC_AccFilterCmd</STRONG> (Thumb, 32 bytes, Stack size 16 bytes, lsm303dlhc.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 168<LI>Call Chain = LSM303DLHC_AccFilterCmd &rArr; COMPASSACCELERO_IO_Write &rArr; I2Cx_WriteData &rArr; I2Cx_Error &rArr; I2Cx_Init &rArr; I2Cx_MspInit &rArr; HAL_NVIC_SetPriority &rArr; NVIC_SetPriority
 </UL>
-<BR>[Calls]<UL><LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;COMPASSACCELERO_IO_Read
-<LI><a href="#[ad]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;COMPASSACCELERO_IO_Write
+<BR>[Calls]<UL><LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;COMPASSACCELERO_IO_Read
+<LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;COMPASSACCELERO_IO_Write
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> lsm303dlhc.o(.data)
 </UL>
 <P><STRONG><a name="[63]"></a>LSM303DLHC_AccReadXYZ</STRONG> (Thumb, 282 bytes, Stack size 40 bytes, lsm303dlhc.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 184<LI>Call Chain = LSM303DLHC_AccReadXYZ &rArr; COMPASSACCELERO_IO_Read &rArr; I2Cx_ReadData &rArr; I2Cx_Error &rArr; I2Cx_Init &rArr; I2Cx_MspInit &rArr; HAL_NVIC_SetPriority &rArr; NVIC_SetPriority
 </UL>
-<BR>[Calls]<UL><LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;COMPASSACCELERO_IO_Read
+<BR>[Calls]<UL><LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;COMPASSACCELERO_IO_Read
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> lsm303dlhc.o(.data)
 </UL>
-<P><STRONG><a name="[b4]"></a>LSM303DLHC_AccFilterClickCmd</STRONG> (Thumb, 34 bytes, Stack size 16 bytes, lsm303dlhc.o(.text))
+<P><STRONG><a name="[b5]"></a>LSM303DLHC_AccFilterClickCmd</STRONG> (Thumb, 34 bytes, Stack size 16 bytes, lsm303dlhc.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 168<LI>Call Chain = LSM303DLHC_AccFilterClickCmd &rArr; COMPASSACCELERO_IO_Write &rArr; I2Cx_WriteData &rArr; I2Cx_Error &rArr; I2Cx_Init &rArr; I2Cx_MspInit &rArr; HAL_NVIC_SetPriority &rArr; NVIC_SetPriority
 </UL>
-<BR>[Calls]<UL><LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;COMPASSACCELERO_IO_Read
-<LI><a href="#[ad]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;COMPASSACCELERO_IO_Write
+<BR>[Calls]<UL><LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;COMPASSACCELERO_IO_Read
+<LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;COMPASSACCELERO_IO_Write
 </UL>
 <BR>[Called By]<UL><LI><a href="#[60]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LSM303DLHC_AccZClickITConfig
 </UL>
 
-<P><STRONG><a name="[b5]"></a>LSM303DLHC_AccIT1Enable</STRONG> (Thumb, 30 bytes, Stack size 16 bytes, lsm303dlhc.o(.text))
+<P><STRONG><a name="[b6]"></a>LSM303DLHC_AccIT1Enable</STRONG> (Thumb, 30 bytes, Stack size 16 bytes, lsm303dlhc.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 168<LI>Call Chain = LSM303DLHC_AccIT1Enable &rArr; COMPASSACCELERO_IO_Write &rArr; I2Cx_WriteData &rArr; I2Cx_Error &rArr; I2Cx_Init &rArr; I2Cx_MspInit &rArr; HAL_NVIC_SetPriority &rArr; NVIC_SetPriority
 </UL>
-<BR>[Calls]<UL><LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;COMPASSACCELERO_IO_Read
-<LI><a href="#[ad]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;COMPASSACCELERO_IO_Write
+<BR>[Calls]<UL><LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;COMPASSACCELERO_IO_Read
+<LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;COMPASSACCELERO_IO_Write
 </UL>
 <BR>[Called By]<UL><LI><a href="#[60]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LSM303DLHC_AccZClickITConfig
 </UL>
 
-<P><STRONG><a name="[b6]"></a>LSM303DLHC_AccIT1Disable</STRONG> (Thumb, 30 bytes, Stack size 16 bytes, lsm303dlhc.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;COMPASSACCELERO_IO_Read
-<LI><a href="#[ad]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;COMPASSACCELERO_IO_Write
+<P><STRONG><a name="[b7]"></a>LSM303DLHC_AccIT1Disable</STRONG> (Thumb, 30 bytes, Stack size 16 bytes, lsm303dlhc.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;COMPASSACCELERO_IO_Read
+<LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;COMPASSACCELERO_IO_Write
 </UL>
 
-<P><STRONG><a name="[b7]"></a>LSM303DLHC_AccIT2Enable</STRONG> (Thumb, 30 bytes, Stack size 16 bytes, lsm303dlhc.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;COMPASSACCELERO_IO_Read
-<LI><a href="#[ad]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;COMPASSACCELERO_IO_Write
+<P><STRONG><a name="[b8]"></a>LSM303DLHC_AccIT2Enable</STRONG> (Thumb, 30 bytes, Stack size 16 bytes, lsm303dlhc.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;COMPASSACCELERO_IO_Read
+<LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;COMPASSACCELERO_IO_Write
 </UL>
 
-<P><STRONG><a name="[b8]"></a>LSM303DLHC_AccIT2Disable</STRONG> (Thumb, 30 bytes, Stack size 16 bytes, lsm303dlhc.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;COMPASSACCELERO_IO_Read
-<LI><a href="#[ad]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;COMPASSACCELERO_IO_Write
+<P><STRONG><a name="[b9]"></a>LSM303DLHC_AccIT2Disable</STRONG> (Thumb, 30 bytes, Stack size 16 bytes, lsm303dlhc.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;COMPASSACCELERO_IO_Read
+<LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;COMPASSACCELERO_IO_Write
 </UL>
 
-<P><STRONG><a name="[b9]"></a>LSM303DLHC_AccINT1InterruptEnable</STRONG> (Thumb, 36 bytes, Stack size 16 bytes, lsm303dlhc.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;COMPASSACCELERO_IO_Read
-<LI><a href="#[ad]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;COMPASSACCELERO_IO_Write
+<P><STRONG><a name="[ba]"></a>LSM303DLHC_AccINT1InterruptEnable</STRONG> (Thumb, 36 bytes, Stack size 16 bytes, lsm303dlhc.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;COMPASSACCELERO_IO_Read
+<LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;COMPASSACCELERO_IO_Write
 </UL>
 
-<P><STRONG><a name="[ba]"></a>LSM303DLHC_AccINT1InterruptDisable</STRONG> (Thumb, 36 bytes, Stack size 16 bytes, lsm303dlhc.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;COMPASSACCELERO_IO_Read
-<LI><a href="#[ad]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;COMPASSACCELERO_IO_Write
+<P><STRONG><a name="[bb]"></a>LSM303DLHC_AccINT1InterruptDisable</STRONG> (Thumb, 36 bytes, Stack size 16 bytes, lsm303dlhc.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;COMPASSACCELERO_IO_Read
+<LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;COMPASSACCELERO_IO_Write
 </UL>
 
-<P><STRONG><a name="[bb]"></a>LSM303DLHC_AccINT2InterruptEnable</STRONG> (Thumb, 36 bytes, Stack size 16 bytes, lsm303dlhc.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;COMPASSACCELERO_IO_Read
-<LI><a href="#[ad]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;COMPASSACCELERO_IO_Write
+<P><STRONG><a name="[bc]"></a>LSM303DLHC_AccINT2InterruptEnable</STRONG> (Thumb, 36 bytes, Stack size 16 bytes, lsm303dlhc.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;COMPASSACCELERO_IO_Read
+<LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;COMPASSACCELERO_IO_Write
 </UL>
 
-<P><STRONG><a name="[bc]"></a>LSM303DLHC_AccINT2InterruptDisable</STRONG> (Thumb, 36 bytes, Stack size 16 bytes, lsm303dlhc.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;COMPASSACCELERO_IO_Read
-<LI><a href="#[ad]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;COMPASSACCELERO_IO_Write
+<P><STRONG><a name="[bd]"></a>LSM303DLHC_AccINT2InterruptDisable</STRONG> (Thumb, 36 bytes, Stack size 16 bytes, lsm303dlhc.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;COMPASSACCELERO_IO_Read
+<LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;COMPASSACCELERO_IO_Write
 </UL>
 
-<P><STRONG><a name="[bd]"></a>LSM303DLHC_AccClickITEnable</STRONG> (Thumb, 76 bytes, Stack size 16 bytes, lsm303dlhc.o(.text))
+<P><STRONG><a name="[be]"></a>LSM303DLHC_AccClickITEnable</STRONG> (Thumb, 76 bytes, Stack size 16 bytes, lsm303dlhc.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 168<LI>Call Chain = LSM303DLHC_AccClickITEnable &rArr; COMPASSACCELERO_IO_Write &rArr; I2Cx_WriteData &rArr; I2Cx_Error &rArr; I2Cx_Init &rArr; I2Cx_MspInit &rArr; HAL_NVIC_SetPriority &rArr; NVIC_SetPriority
 </UL>
-<BR>[Calls]<UL><LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;COMPASSACCELERO_IO_Read
-<LI><a href="#[ad]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;COMPASSACCELERO_IO_Write
+<BR>[Calls]<UL><LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;COMPASSACCELERO_IO_Read
+<LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;COMPASSACCELERO_IO_Write
 </UL>
 <BR>[Called By]<UL><LI><a href="#[60]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LSM303DLHC_AccZClickITConfig
 </UL>
 
-<P><STRONG><a name="[be]"></a>LSM303DLHC_AccClickITDisable</STRONG> (Thumb, 30 bytes, Stack size 16 bytes, lsm303dlhc.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;COMPASSACCELERO_IO_Read
-<LI><a href="#[ad]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;COMPASSACCELERO_IO_Write
+<P><STRONG><a name="[bf]"></a>LSM303DLHC_AccClickITDisable</STRONG> (Thumb, 30 bytes, Stack size 16 bytes, lsm303dlhc.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;COMPASSACCELERO_IO_Read
+<LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;COMPASSACCELERO_IO_Write
 </UL>
 
 <P><STRONG><a name="[60]"></a>LSM303DLHC_AccZClickITConfig</STRONG> (Thumb, 26 bytes, Stack size 8 bytes, lsm303dlhc.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 176<LI>Call Chain = LSM303DLHC_AccZClickITConfig &rArr; LSM303DLHC_AccClickITEnable &rArr; COMPASSACCELERO_IO_Write &rArr; I2Cx_WriteData &rArr; I2Cx_Error &rArr; I2Cx_Init &rArr; I2Cx_MspInit &rArr; HAL_NVIC_SetPriority &rArr; NVIC_SetPriority
 </UL>
-<BR>[Calls]<UL><LI><a href="#[bd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LSM303DLHC_AccClickITEnable
-<LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LSM303DLHC_AccIT1Enable
-<LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LSM303DLHC_AccFilterClickCmd
-<LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;COMPASSACCELERO_IO_ITConfig
+<BR>[Calls]<UL><LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LSM303DLHC_AccClickITEnable
+<LI><a href="#[b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LSM303DLHC_AccIT1Enable
+<LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LSM303DLHC_AccFilterClickCmd
+<LI><a href="#[ad]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;COMPASSACCELERO_IO_ITConfig
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> lsm303dlhc.o(.data)
 </UL>
-<P><STRONG><a name="[b1]"></a>LSM303DLHC_MagInit</STRONG> (Thumb, 62 bytes, Stack size 24 bytes, lsm303dlhc.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[ad]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;COMPASSACCELERO_IO_Write
+<P><STRONG><a name="[b2]"></a>LSM303DLHC_MagInit</STRONG> (Thumb, 62 bytes, Stack size 24 bytes, lsm303dlhc.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;COMPASSACCELERO_IO_Write
 </UL>
-<BR>[Called By]<UL><LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_MAGNETO_Init
-</UL>
-
-<P><STRONG><a name="[bf]"></a>LSM303DLHC_MagGetDataStatus</STRONG> (Thumb, 16 bytes, Stack size 8 bytes, lsm303dlhc.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;COMPASSACCELERO_IO_Read
+<BR>[Called By]<UL><LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_MAGNETO_Init
 </UL>
 
-<P><STRONG><a name="[b0]"></a>LSM303DLHC_MagReadID</STRONG> (Thumb, 22 bytes, Stack size 8 bytes, lsm303dlhc.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;COMPASSACCELERO_IO_Read
-<LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;COMPASSACCELERO_IO_Init
-</UL>
-<BR>[Called By]<UL><LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_MAGNETO_Init
+<P><STRONG><a name="[c0]"></a>LSM303DLHC_MagGetDataStatus</STRONG> (Thumb, 16 bytes, Stack size 8 bytes, lsm303dlhc.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;COMPASSACCELERO_IO_Read
 </UL>
 
-<P><STRONG><a name="[b3]"></a>LSM303DLHC_MagReadXYZ</STRONG> (Thumb, 138 bytes, Stack size 32 bytes, lsm303dlhc.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;COMPASSACCELERO_IO_Read
+<P><STRONG><a name="[b1]"></a>LSM303DLHC_MagReadID</STRONG> (Thumb, 22 bytes, Stack size 8 bytes, lsm303dlhc.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;COMPASSACCELERO_IO_Read
+<LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;COMPASSACCELERO_IO_Init
 </UL>
-<BR>[Called By]<UL><LI><a href="#[b2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_MAGNETO_GetXYZ
+<BR>[Called By]<UL><LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_MAGNETO_Init
+</UL>
+
+<P><STRONG><a name="[b4]"></a>LSM303DLHC_MagReadXYZ</STRONG> (Thumb, 138 bytes, Stack size 32 bytes, lsm303dlhc.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;COMPASSACCELERO_IO_Read
+</UL>
+<BR>[Called By]<UL><LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_MAGNETO_GetXYZ
 </UL>
 
 <P><STRONG><a name="[64]"></a>L3GD20_Init</STRONG> (Thumb, 42 bytes, Stack size 16 bytes, l3gd20.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 116<LI>Call Chain = L3GD20_Init &rArr; GYRO_IO_Write &rArr; SPIx_WriteRead &rArr; SPIx_Error &rArr; SPIx_Init &rArr; SPIx_MspInit &rArr; HAL_GPIO_Init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GYRO_IO_Write
-<LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GYRO_IO_Init
+<BR>[Calls]<UL><LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GYRO_IO_Write
+<LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GYRO_IO_Init
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> l3gd20.o(.data)
 </UL>
 <P><STRONG><a name="[65]"></a>L3GD20_ReadID</STRONG> (Thumb, 22 bytes, Stack size 8 bytes, l3gd20.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 108<LI>Call Chain = L3GD20_ReadID &rArr; GYRO_IO_Read &rArr; SPIx_WriteRead &rArr; SPIx_Error &rArr; SPIx_Init &rArr; SPIx_MspInit &rArr; HAL_GPIO_Init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GYRO_IO_Read
-<LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GYRO_IO_Init
+<BR>[Calls]<UL><LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GYRO_IO_Read
+<LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GYRO_IO_Init
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> l3gd20.o(.data)
 </UL>
 <P><STRONG><a name="[66]"></a>L3GD20_RebootCmd</STRONG> (Thumb, 34 bytes, Stack size 8 bytes, l3gd20.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 108<LI>Call Chain = L3GD20_RebootCmd &rArr; GYRO_IO_Read &rArr; SPIx_WriteRead &rArr; SPIx_Error &rArr; SPIx_Init &rArr; SPIx_MspInit &rArr; HAL_GPIO_Init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GYRO_IO_Read
-<LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GYRO_IO_Write
+<BR>[Calls]<UL><LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GYRO_IO_Read
+<LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GYRO_IO_Write
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> l3gd20.o(.data)
 </UL>
 <P><STRONG><a name="[67]"></a>L3GD20_INT1InterruptConfig</STRONG> (Thumb, 94 bytes, Stack size 16 bytes, l3gd20.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 116<LI>Call Chain = L3GD20_INT1InterruptConfig &rArr; GYRO_IO_Read &rArr; SPIx_WriteRead &rArr; SPIx_Error &rArr; SPIx_Init &rArr; SPIx_MspInit &rArr; HAL_GPIO_Init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GYRO_IO_Read
-<LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GYRO_IO_Write
+<BR>[Calls]<UL><LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GYRO_IO_Read
+<LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GYRO_IO_Write
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> l3gd20.o(.data)
 </UL>
 <P><STRONG><a name="[68]"></a>L3GD20_EnableIT</STRONG> (Thumb, 74 bytes, Stack size 16 bytes, l3gd20.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 116<LI>Call Chain = L3GD20_EnableIT &rArr; GYRO_IO_Read &rArr; SPIx_WriteRead &rArr; SPIx_Error &rArr; SPIx_Init &rArr; SPIx_MspInit &rArr; HAL_GPIO_Init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GYRO_IO_Read
-<LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GYRO_IO_Write
+<BR>[Calls]<UL><LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GYRO_IO_Read
+<LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GYRO_IO_Write
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> l3gd20.o(.data)
 </UL>
 <P><STRONG><a name="[69]"></a>L3GD20_DisableIT</STRONG> (Thumb, 66 bytes, Stack size 16 bytes, l3gd20.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 116<LI>Call Chain = L3GD20_DisableIT &rArr; GYRO_IO_Read &rArr; SPIx_WriteRead &rArr; SPIx_Error &rArr; SPIx_Init &rArr; SPIx_MspInit &rArr; HAL_GPIO_Init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GYRO_IO_Read
-<LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GYRO_IO_Write
+<BR>[Calls]<UL><LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GYRO_IO_Read
+<LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GYRO_IO_Write
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> l3gd20.o(.data)
 </UL>
 <P><STRONG><a name="[6a]"></a>L3GD20_FilterConfig</STRONG> (Thumb, 44 bytes, Stack size 16 bytes, l3gd20.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 116<LI>Call Chain = L3GD20_FilterConfig &rArr; GYRO_IO_Read &rArr; SPIx_WriteRead &rArr; SPIx_Error &rArr; SPIx_Init &rArr; SPIx_MspInit &rArr; HAL_GPIO_Init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GYRO_IO_Read
-<LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GYRO_IO_Write
+<BR>[Calls]<UL><LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GYRO_IO_Read
+<LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GYRO_IO_Write
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> l3gd20.o(.data)
 </UL>
 <P><STRONG><a name="[6b]"></a>L3GD20_FilterCmd</STRONG> (Thumb, 44 bytes, Stack size 16 bytes, l3gd20.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 116<LI>Call Chain = L3GD20_FilterCmd &rArr; GYRO_IO_Read &rArr; SPIx_WriteRead &rArr; SPIx_Error &rArr; SPIx_Init &rArr; SPIx_MspInit &rArr; HAL_GPIO_Init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GYRO_IO_Read
-<LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GYRO_IO_Write
+<BR>[Calls]<UL><LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GYRO_IO_Read
+<LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GYRO_IO_Write
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> l3gd20.o(.data)
 </UL>
-<P><STRONG><a name="[c0]"></a>L3GD20_GetDataStatus</STRONG> (Thumb, 18 bytes, Stack size 8 bytes, l3gd20.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GYRO_IO_Read
+<P><STRONG><a name="[c1]"></a>L3GD20_GetDataStatus</STRONG> (Thumb, 18 bytes, Stack size 8 bytes, l3gd20.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GYRO_IO_Read
 </UL>
 
 <P><STRONG><a name="[6c]"></a>L3GD20_ReadXYZAngRate</STRONG> (Thumb, 240 bytes, Stack size 40 bytes, l3gd20.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 140<LI>Call Chain = L3GD20_ReadXYZAngRate &rArr; GYRO_IO_Read &rArr; SPIx_WriteRead &rArr; SPIx_Error &rArr; SPIx_Init &rArr; SPIx_MspInit &rArr; HAL_GPIO_Init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GYRO_IO_Read
+<BR>[Calls]<UL><LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GYRO_IO_Read
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> l3gd20.o(.data)
 </UL>
 <P><STRONG><a name="[c5]"></a>BSP_GYRO_Init</STRONG> (Thumb, 168 bytes, Stack size 24 bytes, stm32f401_discovery_gyroscope.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = BSP_GYRO_Init
 </UL>
-<BR>[Called By]<UL><LI><a href="#[86]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;accel_gyro_Init
+<BR>[Called By]<UL><LI><a href="#[88]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;accel_gyro_Init
 </UL>
 
 <P><STRONG><a name="[1ca]"></a>BSP_GYRO_ReadID</STRONG> (Thumb, 26 bytes, Stack size 8 bytes, stm32f401_discovery_gyroscope.o(.text), UNUSED)
@@ -744,26 +746,26 @@ Global Symbols
 
 <P><STRONG><a name="[1ce]"></a>BSP_GYRO_DisableIT</STRONG> (Thumb, 24 bytes, Stack size 8 bytes, stm32f401_discovery_gyroscope.o(.text), UNUSED)
 
-<P><STRONG><a name="[c2]"></a>BSP_GYRO_GetXYZ</STRONG> (Thumb, 24 bytes, Stack size 8 bytes, stm32f401_discovery_gyroscope.o(.text))
+<P><STRONG><a name="[c3]"></a>BSP_GYRO_GetXYZ</STRONG> (Thumb, 24 bytes, Stack size 8 bytes, stm32f401_discovery_gyroscope.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = BSP_GYRO_GetXYZ
 </UL>
 <BR>[Called By]<UL><LI><a href="#[c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getGyro
-<LI><a href="#[c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;compute_Gyro_RT_Data
+<LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;compute_Gyro_RT_Data
 </UL>
 
-<P><STRONG><a name="[c1]"></a>compute_Gyro_RT_Data</STRONG> (Thumb, 140 bytes, Stack size 40 bytes, mag_accel.o(.text))
+<P><STRONG><a name="[c2]"></a>compute_Gyro_RT_Data</STRONG> (Thumb, 140 bytes, Stack size 40 bytes, mag_accel.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = compute_Gyro_RT_Data &rArr; BSP_GYRO_GetXYZ
 </UL>
-<BR>[Calls]<UL><LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_GYRO_GetXYZ
-<LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay
+<BR>[Calls]<UL><LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_GYRO_GetXYZ
+<LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay
 </UL>
-<BR>[Called By]<UL><LI><a href="#[86]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;accel_gyro_Init
+<BR>[Called By]<UL><LI><a href="#[88]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;accel_gyro_Init
 </UL>
 
-<P><STRONG><a name="[86]"></a>accel_gyro_Init</STRONG> (Thumb, 26 bytes, Stack size 16 bytes, mag_accel.o(.text))
+<P><STRONG><a name="[88]"></a>accel_gyro_Init</STRONG> (Thumb, 26 bytes, Stack size 16 bytes, mag_accel.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 64<LI>Call Chain = accel_gyro_Init &rArr; compute_Gyro_RT_Data &rArr; BSP_GYRO_GetXYZ
 </UL>
-<BR>[Calls]<UL><LI><a href="#[c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;compute_Gyro_RT_Data
+<BR>[Calls]<UL><LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;compute_Gyro_RT_Data
 <LI><a href="#[c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_GYRO_Init
 <LI><a href="#[c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_ACCELERO_Init
 </UL>
@@ -773,9 +775,9 @@ Global Symbols
 <P><STRONG><a name="[c6]"></a>getGyro</STRONG> (Thumb, 62 bytes, Stack size 24 bytes, mag_accel.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = getGyro &rArr; BSP_GYRO_GetXYZ
 </UL>
-<BR>[Calls]<UL><LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_GYRO_GetXYZ
+<BR>[Calls]<UL><LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_GYRO_GetXYZ
 </UL>
-<BR>[Called By]<UL><LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GetXYZangle
+<BR>[Called By]<UL><LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GetXYZangle
 </UL>
 
 <P><STRONG><a name="[c7]"></a>timer_init</STRONG> (Thumb, 70 bytes, Stack size 8 bytes, tim_pwm.o(.text))
@@ -798,7 +800,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[cc]"></a>pwm_ch_dim</STRONG> (Thumb, 56 bytes, Stack size 0 bytes, tim_pwm.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GetXYZangle
+<BR><BR>[Called By]<UL><LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GetXYZangle
 </UL>
 
 <P><STRONG><a name="[84]"></a>PWM_Init</STRONG> (Thumb, 26 bytes, Stack size 8 bytes, app.o(.text))
@@ -810,14 +812,14 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[87]"></a>GetXYZangle</STRONG> (Thumb, 678 bytes, Stack size 16 bytes, app.o(.text))
+<P><STRONG><a name="[89]"></a>GetXYZangle</STRONG> (Thumb, 684 bytes, Stack size 16 bytes, app.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 52<LI>Call Chain = GetXYZangle &rArr; __hardfp_sinf &rArr; __mathlib_rredf2
 </UL>
 <BR>[Calls]<UL><LI><a href="#[cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pwm_ch_dim
 <LI><a href="#[c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getGyro
 <LI><a href="#[cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_ACCELERO_GetXYZ
-<LI><a href="#[88]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_ReadPin
-<LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay
+<LI><a href="#[86]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_ReadPin
+<LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay
 <LI><a href="#[cf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_sinf
 <LI><a href="#[d0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_cosf
 <LI><a href="#[ce]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__hardfp_atan2f
@@ -1071,7 +1073,7 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[d3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SYSTICK_Config
 <LI><a href="#[d2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCC_GetHCLKFreq
-<LI><a href="#[8f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_NVIC_SetPriority
+<LI><a href="#[90]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_NVIC_SetPriority
 </UL>
 <BR>[Called By]<UL><LI><a href="#[82]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Init
 <LI><a href="#[112]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCC_ClockConfig
@@ -1100,7 +1102,7 @@ Global Symbols
 <P><STRONG><a name="[d8]"></a>HAL_GetTick</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, stm32f4xx_hal.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[e2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_DMA_PollForTransfer
 <LI><a href="#[e1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_DMA_Abort
-<LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Delay
+<LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Delay
 <LI><a href="#[11a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_WaitOnFlagUntilTimeout
 <LI><a href="#[112]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCC_ClockConfig
 <LI><a href="#[111]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCC_OscConfig
@@ -1109,10 +1111,10 @@ Global Symbols
 <LI><a href="#[e8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_WaitOnFlagUntilTimeout
 </UL>
 
-<P><STRONG><a name="[a8]"></a>HAL_Delay</STRONG> (Thumb, 26 bytes, Stack size 16 bytes, stm32f4xx_hal.o(.text), UNUSED)
+<P><STRONG><a name="[a9]"></a>HAL_Delay</STRONG> (Thumb, 26 bytes, Stack size 16 bytes, stm32f4xx_hal.o(.text), UNUSED)
 <BR><BR>[Calls]<UL><LI><a href="#[d8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GetTick
 </UL>
-<BR>[Called By]<UL><LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AUDIO_IO_Init
+<BR>[Called By]<UL><LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AUDIO_IO_Init
 </UL>
 
 <P><STRONG><a name="[1d1]"></a>HAL_SuspendTick</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, stm32f4xx_hal.o(.text), UNUSED)
@@ -1145,21 +1147,21 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[82]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Init
 </UL>
 
-<P><STRONG><a name="[8f]"></a>HAL_NVIC_SetPriority</STRONG> (Thumb, 124 bytes, Stack size 40 bytes, stm32f4xx_hal_cortex.o(.text))
+<P><STRONG><a name="[90]"></a>HAL_NVIC_SetPriority</STRONG> (Thumb, 124 bytes, Stack size 40 bytes, stm32f4xx_hal_cortex.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = HAL_NVIC_SetPriority &rArr; NVIC_SetPriority
 </UL>
 <BR>[Calls]<UL><LI><a href="#[d9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NVIC_GetPriorityGrouping
 <LI><a href="#[da]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NVIC_SetPriority
 </UL>
 <BR>[Called By]<UL><LI><a href="#[d1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_InitTick
-<LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;COMPASSACCELERO_IO_ITConfig
-<LI><a href="#[92]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2Cx_MspInit
+<LI><a href="#[ad]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;COMPASSACCELERO_IO_ITConfig
+<LI><a href="#[93]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2Cx_MspInit
 <LI><a href="#[83]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_PB_Init
 </UL>
 
-<P><STRONG><a name="[90]"></a>HAL_NVIC_EnableIRQ</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, stm32f4xx_hal_cortex.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;COMPASSACCELERO_IO_ITConfig
-<LI><a href="#[92]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2Cx_MspInit
+<P><STRONG><a name="[91]"></a>HAL_NVIC_EnableIRQ</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, stm32f4xx_hal_cortex.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[ad]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;COMPASSACCELERO_IO_ITConfig
+<LI><a href="#[93]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2Cx_MspInit
 <LI><a href="#[83]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_PB_Init
 </UL>
 
@@ -1250,13 +1252,13 @@ Global Symbols
 <P><STRONG><a name="[80]"></a>HAL_GPIO_Init</STRONG> (Thumb, 466 bytes, Stack size 20 bytes, stm32f4xx_hal_gpio.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 20<LI>Call Chain = HAL_GPIO_Init
 </UL>
-<BR>[Called By]<UL><LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;COMPASSACCELERO_IO_ITConfig
-<LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;COMPASSACCELERO_IO_Init
-<LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AUDIO_IO_Init
-<LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GYRO_IO_Init
-<LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_LED_Init
-<LI><a href="#[9c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPIx_MspInit
-<LI><a href="#[92]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2Cx_MspInit
+<BR>[Called By]<UL><LI><a href="#[ad]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;COMPASSACCELERO_IO_ITConfig
+<LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;COMPASSACCELERO_IO_Init
+<LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AUDIO_IO_Init
+<LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GYRO_IO_Init
+<LI><a href="#[8a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_LED_Init
+<LI><a href="#[9d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPIx_MspInit
+<LI><a href="#[93]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2Cx_MspInit
 <LI><a href="#[83]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_PB_Init
 <LI><a href="#[81]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LED_Init
 <LI><a href="#[7f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BUTTON_Init
@@ -1265,24 +1267,24 @@ Global Symbols
 
 <P><STRONG><a name="[1eb]"></a>HAL_GPIO_DeInit</STRONG> (Thumb, 200 bytes, Stack size 20 bytes, stm32f4xx_hal_gpio.o(.text), UNUSED)
 
-<P><STRONG><a name="[88]"></a>HAL_GPIO_ReadPin</STRONG> (Thumb, 16 bytes, Stack size 0 bytes, stm32f4xx_hal_gpio.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[91]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_PB_GetState
-<LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GetXYZangle
+<P><STRONG><a name="[86]"></a>HAL_GPIO_ReadPin</STRONG> (Thumb, 16 bytes, Stack size 0 bytes, stm32f4xx_hal_gpio.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[92]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_PB_GetState
+<LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GetXYZangle
 <LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[8a]"></a>HAL_GPIO_WritePin</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, stm32f4xx_hal_gpio.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AUDIO_IO_Init
-<LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GYRO_IO_Read
-<LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GYRO_IO_Write
-<LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GYRO_IO_Init
-<LI><a href="#[8c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_LED_Off
-<LI><a href="#[8b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_LED_On
-<LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_LED_Init
+<P><STRONG><a name="[8b]"></a>HAL_GPIO_WritePin</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, stm32f4xx_hal_gpio.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AUDIO_IO_Init
+<LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GYRO_IO_Read
+<LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GYRO_IO_Write
+<LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GYRO_IO_Init
+<LI><a href="#[8d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_LED_Off
+<LI><a href="#[8c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_LED_On
+<LI><a href="#[8a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_LED_Init
 </UL>
 
-<P><STRONG><a name="[8e]"></a>HAL_GPIO_TogglePin</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, stm32f4xx_hal_gpio.o(.text), UNUSED)
-<BR><BR>[Called By]<UL><LI><a href="#[8d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_LED_Toggle
+<P><STRONG><a name="[8f]"></a>HAL_GPIO_TogglePin</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, stm32f4xx_hal_gpio.o(.text), UNUSED)
+<BR><BR>[Called By]<UL><LI><a href="#[8e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_LED_Toggle
 </UL>
 
 <P><STRONG><a name="[1ec]"></a>HAL_GPIO_LockPin</STRONG> (Thumb, 46 bytes, Stack size 8 bytes, stm32f4xx_hal_gpio.o(.text), UNUSED)
@@ -1296,28 +1298,28 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[e5]"></a>HAL_I2C_MspInit</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, stm32f4xx_hal_i2c.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_Init
+<BR><BR>[Called By]<UL><LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_Init
 </UL>
 
-<P><STRONG><a name="[95]"></a>HAL_I2C_Init</STRONG> (Thumb, 274 bytes, Stack size 16 bytes, stm32f4xx_hal_i2c.o(.text))
+<P><STRONG><a name="[96]"></a>HAL_I2C_Init</STRONG> (Thumb, 274 bytes, Stack size 16 bytes, stm32f4xx_hal_i2c.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = HAL_I2C_Init &rArr; HAL_RCC_GetPCLK1Freq &rArr; HAL_RCC_GetHCLKFreq &rArr; HAL_RCC_GetSysClockFreq
 </UL>
 <BR>[Calls]<UL><LI><a href="#[e5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_MspInit
 <LI><a href="#[e6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCC_GetPCLK1Freq
 </UL>
-<BR>[Called By]<UL><LI><a href="#[93]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2Cx_Init
+<BR>[Called By]<UL><LI><a href="#[94]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2Cx_Init
 </UL>
 
 <P><STRONG><a name="[e7]"></a>HAL_I2C_MspDeInit</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, stm32f4xx_hal_i2c.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[97]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_DeInit
+<BR><BR>[Called By]<UL><LI><a href="#[98]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_DeInit
 </UL>
 
-<P><STRONG><a name="[97]"></a>HAL_I2C_DeInit</STRONG> (Thumb, 56 bytes, Stack size 8 bytes, stm32f4xx_hal_i2c.o(.text))
+<P><STRONG><a name="[98]"></a>HAL_I2C_DeInit</STRONG> (Thumb, 56 bytes, Stack size 8 bytes, stm32f4xx_hal_i2c.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = HAL_I2C_DeInit
 </UL>
 <BR>[Calls]<UL><LI><a href="#[e7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_MspDeInit
 </UL>
-<BR>[Called By]<UL><LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2Cx_Error
+<BR>[Called By]<UL><LI><a href="#[97]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2Cx_Error
 </UL>
 
 <P><STRONG><a name="[eb]"></a>HAL_I2C_Master_Transmit</STRONG> (Thumb, 288 bytes, Stack size 24 bytes, stm32f4xx_hal_i2c.o(.text), UNUSED)
@@ -1402,22 +1404,22 @@ Global Symbols
 <LI><a href="#[e8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_WaitOnFlagUntilTimeout
 </UL>
 
-<P><STRONG><a name="[99]"></a>HAL_I2C_Mem_Write</STRONG> (Thumb, 270 bytes, Stack size 40 bytes, stm32f4xx_hal_i2c.o(.text))
+<P><STRONG><a name="[9a]"></a>HAL_I2C_Mem_Write</STRONG> (Thumb, 270 bytes, Stack size 40 bytes, stm32f4xx_hal_i2c.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 88<LI>Call Chain = HAL_I2C_Mem_Write &rArr; I2C_RequestMemoryWrite &rArr; I2C_WaitOnMasterAddressFlagUntilTimeout
 </UL>
 <BR>[Calls]<UL><LI><a href="#[fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_RequestMemoryWrite
 <LI><a href="#[e8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_WaitOnFlagUntilTimeout
 </UL>
-<BR>[Called By]<UL><LI><a href="#[98]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2Cx_WriteData
+<BR>[Called By]<UL><LI><a href="#[99]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2Cx_WriteData
 </UL>
 
-<P><STRONG><a name="[9b]"></a>HAL_I2C_Mem_Read</STRONG> (Thumb, 546 bytes, Stack size 40 bytes, stm32f4xx_hal_i2c.o(.text))
+<P><STRONG><a name="[9c]"></a>HAL_I2C_Mem_Read</STRONG> (Thumb, 546 bytes, Stack size 40 bytes, stm32f4xx_hal_i2c.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 88<LI>Call Chain = HAL_I2C_Mem_Read &rArr; I2C_RequestMemoryRead &rArr; I2C_WaitOnMasterAddressFlagUntilTimeout
 </UL>
 <BR>[Calls]<UL><LI><a href="#[fc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_RequestMemoryRead
 <LI><a href="#[e8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_WaitOnFlagUntilTimeout
 </UL>
-<BR>[Called By]<UL><LI><a href="#[9a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2Cx_ReadData
+<BR>[Called By]<UL><LI><a href="#[9b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2Cx_ReadData
 </UL>
 
 <P><STRONG><a name="[fd]"></a>HAL_I2C_Mem_Write_IT</STRONG> (Thumb, 172 bytes, Stack size 32 bytes, stm32f4xx_hal_i2c.o(.text), UNUSED)
@@ -1472,8 +1474,8 @@ Global Symbols
 <LI><a href="#[10f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_Slave_AF
 </UL>
 
-<P><STRONG><a name="[94]"></a>HAL_I2C_GetState</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, stm32f4xx_hal_i2c.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[93]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2Cx_Init
+<P><STRONG><a name="[95]"></a>HAL_I2C_GetState</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, stm32f4xx_hal_i2c.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[94]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2Cx_Init
 </UL>
 
 <P><STRONG><a name="[1ef]"></a>HAL_I2C_GetError</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, stm32f4xx_hal_i2c.o(.text), UNUSED)
@@ -1518,7 +1520,7 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[d2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCC_GetHCLKFreq
 </UL>
-<BR>[Called By]<UL><LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_Init
+<BR>[Called By]<UL><LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_Init
 </UL>
 
 <P><STRONG><a name="[115]"></a>HAL_RCC_GetPCLK2Freq</STRONG> (Thumb, 36 bytes, Stack size 4 bytes, stm32f4xx_hal_rcc.o(.text), UNUSED)
@@ -1538,44 +1540,44 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[118]"></a>HAL_SPI_MspInit</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, stm32f4xx_hal_spi.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_Init
+<BR><BR>[Called By]<UL><LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_Init
 </UL>
 
-<P><STRONG><a name="[9f]"></a>HAL_SPI_Init</STRONG> (Thumb, 132 bytes, Stack size 8 bytes, stm32f4xx_hal_spi.o(.text))
+<P><STRONG><a name="[a0]"></a>HAL_SPI_Init</STRONG> (Thumb, 132 bytes, Stack size 8 bytes, stm32f4xx_hal_spi.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = HAL_SPI_Init
 </UL>
 <BR>[Calls]<UL><LI><a href="#[118]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_MspInit
 </UL>
-<BR>[Called By]<UL><LI><a href="#[9d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPIx_Init
+<BR>[Called By]<UL><LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPIx_Init
 </UL>
 
 <P><STRONG><a name="[119]"></a>HAL_SPI_MspDeInit</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, stm32f4xx_hal_spi.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_DeInit
+<BR><BR>[Called By]<UL><LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_DeInit
 </UL>
 
-<P><STRONG><a name="[a1]"></a>HAL_SPI_DeInit</STRONG> (Thumb, 50 bytes, Stack size 8 bytes, stm32f4xx_hal_spi.o(.text))
+<P><STRONG><a name="[a2]"></a>HAL_SPI_DeInit</STRONG> (Thumb, 50 bytes, Stack size 8 bytes, stm32f4xx_hal_spi.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = HAL_SPI_DeInit
 </UL>
 <BR>[Calls]<UL><LI><a href="#[119]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_MspDeInit
 </UL>
-<BR>[Called By]<UL><LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPIx_Error
+<BR>[Called By]<UL><LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPIx_Error
 </UL>
 
 <P><STRONG><a name="[11b]"></a>HAL_SPI_Transmit</STRONG> (Thumb, 454 bytes, Stack size 24 bytes, stm32f4xx_hal_spi.o(.text), UNUSED)
 <BR><BR>[Calls]<UL><LI><a href="#[11a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_WaitOnFlagUntilTimeout
 </UL>
 
-<P><STRONG><a name="[a3]"></a>HAL_SPI_TransmitReceive</STRONG> (Thumb, 860 bytes, Stack size 40 bytes, stm32f4xx_hal_spi.o(.text))
+<P><STRONG><a name="[a4]"></a>HAL_SPI_TransmitReceive</STRONG> (Thumb, 860 bytes, Stack size 40 bytes, stm32f4xx_hal_spi.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 64<LI>Call Chain = HAL_SPI_TransmitReceive &rArr; SPI_WaitOnFlagUntilTimeout
 </UL>
 <BR>[Calls]<UL><LI><a href="#[11a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_WaitOnFlagUntilTimeout
 </UL>
-<BR>[Called By]<UL><LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPIx_WriteRead
+<BR>[Called By]<UL><LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPIx_WriteRead
 <LI><a href="#[11c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_Receive
 </UL>
 
 <P><STRONG><a name="[11c]"></a>HAL_SPI_Receive</STRONG> (Thumb, 578 bytes, Stack size 32 bytes, stm32f4xx_hal_spi.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_TransmitReceive
+<BR><BR>[Calls]<UL><LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_TransmitReceive
 <LI><a href="#[11a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_WaitOnFlagUntilTimeout
 </UL>
 
@@ -1654,8 +1656,8 @@ Global Symbols
 <BR><BR>[Calls]<UL><LI><a href="#[120]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_ErrorCallback
 </UL>
 
-<P><STRONG><a name="[9e]"></a>HAL_SPI_GetState</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, stm32f4xx_hal_spi.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[9d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPIx_Init
+<P><STRONG><a name="[9f]"></a>HAL_SPI_GetState</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, stm32f4xx_hal_spi.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPIx_Init
 </UL>
 
 <P><STRONG><a name="[1f8]"></a>HAL_SPI_GetError</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, stm32f4xx_hal_spi.o(.text), UNUSED)
@@ -2319,7 +2321,7 @@ Global Symbols
 <LI><a href="#[1a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__mathlib_flt_infnan2
 <LI><a href="#[1a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__ARM_fpclassifyf
 </UL>
-<BR>[Called By]<UL><LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GetXYZangle
+<BR>[Called By]<UL><LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GetXYZangle
 </UL>
 
 <P><STRONG><a name="[d0]"></a>__hardfp_cosf</STRONG> (Thumb, 280 bytes, Stack size 8 bytes, cosf.o(i.__hardfp_cosf))
@@ -2330,7 +2332,7 @@ Global Symbols
 <LI><a href="#[1a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__mathlib_flt_infnan
 <LI><a href="#[19c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__set_errno
 </UL>
-<BR>[Called By]<UL><LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GetXYZangle
+<BR>[Called By]<UL><LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GetXYZangle
 </UL>
 
 <P><STRONG><a name="[cf]"></a>__hardfp_sinf</STRONG> (Thumb, 344 bytes, Stack size 16 bytes, sinf.o(i.__hardfp_sinf))
@@ -2343,7 +2345,7 @@ Global Symbols
 <LI><a href="#[1a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__ARM_fpclassifyf
 <LI><a href="#[19c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__set_errno
 </UL>
-<BR>[Called By]<UL><LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GetXYZangle
+<BR>[Called By]<UL><LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GetXYZangle
 </UL>
 
 <P><STRONG><a name="[1a5]"></a>__mathlib_flt_infnan</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, funder.o(i.__mathlib_flt_infnan))
@@ -2383,106 +2385,106 @@ Global Symbols
 <H3>
 Local Symbols
 </H3>
-<P><STRONG><a name="[92]"></a>I2Cx_MspInit</STRONG> (Thumb, 126 bytes, Stack size 32 bytes, stm32f401_discovery.o(.text))
+<P><STRONG><a name="[93]"></a>I2Cx_MspInit</STRONG> (Thumb, 126 bytes, Stack size 32 bytes, stm32f401_discovery.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 80<LI>Call Chain = I2Cx_MspInit &rArr; HAL_NVIC_SetPriority &rArr; NVIC_SetPriority
 </UL>
-<BR>[Calls]<UL><LI><a href="#[8f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_NVIC_SetPriority
-<LI><a href="#[90]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_NVIC_EnableIRQ
+<BR>[Calls]<UL><LI><a href="#[90]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_NVIC_SetPriority
+<LI><a href="#[91]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_NVIC_EnableIRQ
 <LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_Init
 </UL>
-<BR>[Called By]<UL><LI><a href="#[93]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2Cx_Init
+<BR>[Called By]<UL><LI><a href="#[94]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2Cx_Init
 </UL>
 
-<P><STRONG><a name="[93]"></a>I2Cx_Init</STRONG> (Thumb, 62 bytes, Stack size 8 bytes, stm32f401_discovery.o(.text))
+<P><STRONG><a name="[94]"></a>I2Cx_Init</STRONG> (Thumb, 62 bytes, Stack size 8 bytes, stm32f401_discovery.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 88<LI>Call Chain = I2Cx_Init &rArr; I2Cx_MspInit &rArr; HAL_NVIC_SetPriority &rArr; NVIC_SetPriority
 </UL>
-<BR>[Calls]<UL><LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_Init
-<LI><a href="#[94]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_GetState
-<LI><a href="#[92]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2Cx_MspInit
+<BR>[Calls]<UL><LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_Init
+<LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_GetState
+<LI><a href="#[93]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2Cx_MspInit
 </UL>
-<BR>[Called By]<UL><LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;COMPASSACCELERO_IO_Init
-<LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AUDIO_IO_Init
-<LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2Cx_Error
+<BR>[Called By]<UL><LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;COMPASSACCELERO_IO_Init
+<LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AUDIO_IO_Init
+<LI><a href="#[97]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2Cx_Error
 </UL>
 
-<P><STRONG><a name="[96]"></a>I2Cx_Error</STRONG> (Thumb, 14 bytes, Stack size 8 bytes, stm32f401_discovery.o(.text))
+<P><STRONG><a name="[97]"></a>I2Cx_Error</STRONG> (Thumb, 14 bytes, Stack size 8 bytes, stm32f401_discovery.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 96<LI>Call Chain = I2Cx_Error &rArr; I2Cx_Init &rArr; I2Cx_MspInit &rArr; HAL_NVIC_SetPriority &rArr; NVIC_SetPriority
 </UL>
-<BR>[Calls]<UL><LI><a href="#[97]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_DeInit
-<LI><a href="#[93]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2Cx_Init
+<BR>[Calls]<UL><LI><a href="#[98]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_DeInit
+<LI><a href="#[94]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2Cx_Init
 </UL>
-<BR>[Called By]<UL><LI><a href="#[9a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2Cx_ReadData
-<LI><a href="#[98]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2Cx_WriteData
+<BR>[Called By]<UL><LI><a href="#[9b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2Cx_ReadData
+<LI><a href="#[99]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2Cx_WriteData
 </UL>
 
-<P><STRONG><a name="[98]"></a>I2Cx_WriteData</STRONG> (Thumb, 48 bytes, Stack size 40 bytes, stm32f401_discovery.o(.text))
+<P><STRONG><a name="[99]"></a>I2Cx_WriteData</STRONG> (Thumb, 48 bytes, Stack size 40 bytes, stm32f401_discovery.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 136<LI>Call Chain = I2Cx_WriteData &rArr; I2Cx_Error &rArr; I2Cx_Init &rArr; I2Cx_MspInit &rArr; HAL_NVIC_SetPriority &rArr; NVIC_SetPriority
 </UL>
-<BR>[Calls]<UL><LI><a href="#[99]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_Mem_Write
-<LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2Cx_Error
+<BR>[Calls]<UL><LI><a href="#[9a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_Mem_Write
+<LI><a href="#[97]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2Cx_Error
 </UL>
-<BR>[Called By]<UL><LI><a href="#[ad]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;COMPASSACCELERO_IO_Write
-<LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AUDIO_IO_Write
+<BR>[Called By]<UL><LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;COMPASSACCELERO_IO_Write
+<LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AUDIO_IO_Write
 </UL>
 
-<P><STRONG><a name="[9a]"></a>I2Cx_ReadData</STRONG> (Thumb, 54 bytes, Stack size 32 bytes, stm32f401_discovery.o(.text))
+<P><STRONG><a name="[9b]"></a>I2Cx_ReadData</STRONG> (Thumb, 54 bytes, Stack size 32 bytes, stm32f401_discovery.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 128<LI>Call Chain = I2Cx_ReadData &rArr; I2Cx_Error &rArr; I2Cx_Init &rArr; I2Cx_MspInit &rArr; HAL_NVIC_SetPriority &rArr; NVIC_SetPriority
 </UL>
-<BR>[Calls]<UL><LI><a href="#[9b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_Mem_Read
-<LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2Cx_Error
+<BR>[Calls]<UL><LI><a href="#[9c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_Mem_Read
+<LI><a href="#[97]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2Cx_Error
 </UL>
-<BR>[Called By]<UL><LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;COMPASSACCELERO_IO_Read
-<LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AUDIO_IO_Read
+<BR>[Called By]<UL><LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;COMPASSACCELERO_IO_Read
+<LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AUDIO_IO_Read
 </UL>
 
-<P><STRONG><a name="[9c]"></a>SPIx_MspInit</STRONG> (Thumb, 64 bytes, Stack size 32 bytes, stm32f401_discovery.o(.text))
+<P><STRONG><a name="[9d]"></a>SPIx_MspInit</STRONG> (Thumb, 64 bytes, Stack size 32 bytes, stm32f401_discovery.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 52<LI>Call Chain = SPIx_MspInit &rArr; HAL_GPIO_Init
 </UL>
 <BR>[Calls]<UL><LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_Init
 </UL>
-<BR>[Called By]<UL><LI><a href="#[9d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPIx_Init
+<BR>[Called By]<UL><LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPIx_Init
 </UL>
 
-<P><STRONG><a name="[9d]"></a>SPIx_Init</STRONG> (Thumb, 74 bytes, Stack size 8 bytes, stm32f401_discovery.o(.text))
+<P><STRONG><a name="[9e]"></a>SPIx_Init</STRONG> (Thumb, 74 bytes, Stack size 8 bytes, stm32f401_discovery.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 60<LI>Call Chain = SPIx_Init &rArr; SPIx_MspInit &rArr; HAL_GPIO_Init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_Init
-<LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_GetState
-<LI><a href="#[9c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPIx_MspInit
+<BR>[Calls]<UL><LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_Init
+<LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_GetState
+<LI><a href="#[9d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPIx_MspInit
 </UL>
-<BR>[Called By]<UL><LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GYRO_IO_Init
-<LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPIx_Error
+<BR>[Called By]<UL><LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GYRO_IO_Init
+<LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPIx_Error
 </UL>
 
-<P><STRONG><a name="[a0]"></a>SPIx_Error</STRONG> (Thumb, 14 bytes, Stack size 8 bytes, stm32f401_discovery.o(.text))
+<P><STRONG><a name="[a1]"></a>SPIx_Error</STRONG> (Thumb, 14 bytes, Stack size 8 bytes, stm32f401_discovery.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 68<LI>Call Chain = SPIx_Error &rArr; SPIx_Init &rArr; SPIx_MspInit &rArr; HAL_GPIO_Init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_DeInit
-<LI><a href="#[9d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPIx_Init
+<BR>[Calls]<UL><LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_DeInit
+<LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPIx_Init
 </UL>
-<BR>[Called By]<UL><LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPIx_WriteRead
+<BR>[Called By]<UL><LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPIx_WriteRead
 </UL>
 
-<P><STRONG><a name="[a2]"></a>SPIx_WriteRead</STRONG> (Thumb, 38 bytes, Stack size 16 bytes, stm32f401_discovery.o(.text))
+<P><STRONG><a name="[a3]"></a>SPIx_WriteRead</STRONG> (Thumb, 38 bytes, Stack size 16 bytes, stm32f401_discovery.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 84<LI>Call Chain = SPIx_WriteRead &rArr; SPIx_Error &rArr; SPIx_Init &rArr; SPIx_MspInit &rArr; HAL_GPIO_Init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_TransmitReceive
-<LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPIx_Error
+<BR>[Calls]<UL><LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_TransmitReceive
+<LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPIx_Error
 </UL>
-<BR>[Called By]<UL><LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GYRO_IO_Read
-<LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GYRO_IO_Write
+<BR>[Called By]<UL><LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GYRO_IO_Read
+<LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GYRO_IO_Write
 </UL>
 
 <P><STRONG><a name="[da]"></a>NVIC_SetPriority</STRONG> (Thumb, 32 bytes, Stack size 8 bytes, stm32f4xx_hal_cortex.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = NVIC_SetPriority
 </UL>
 <BR>[Called By]<UL><LI><a href="#[d3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SYSTICK_Config
-<LI><a href="#[8f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_NVIC_SetPriority
+<LI><a href="#[90]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_NVIC_SetPriority
 </UL>
 
 <P><STRONG><a name="[d9]"></a>NVIC_GetPriorityGrouping</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, stm32f4xx_hal_cortex.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[db]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_NVIC_GetPriorityGrouping
-<LI><a href="#[8f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_NVIC_SetPriority
+<LI><a href="#[90]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_NVIC_SetPriority
 </UL>
 
 <P><STRONG><a name="[df]"></a>DMA_SetConfig</STRONG> (Thumb, 32 bytes, Stack size 8 bytes, stm32f4xx_hal_dma.o(.text), UNUSED)
@@ -2495,8 +2497,8 @@ Local Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[d8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GetTick
 </UL>
-<BR>[Called By]<UL><LI><a href="#[99]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_Mem_Write
-<LI><a href="#[9b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_Mem_Read
+<BR>[Called By]<UL><LI><a href="#[9a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_Mem_Write
+<LI><a href="#[9c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_Mem_Read
 <LI><a href="#[103]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_IsDeviceReady
 <LI><a href="#[fa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_Slave_Receive_DMA
 <LI><a href="#[f8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_Slave_Transmit_DMA
@@ -2599,7 +2601,7 @@ Local Symbols
 <BR>[Calls]<UL><LI><a href="#[e9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_WaitOnMasterAddressFlagUntilTimeout
 <LI><a href="#[e8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_WaitOnFlagUntilTimeout
 </UL>
-<BR>[Called By]<UL><LI><a href="#[99]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_Mem_Write
+<BR>[Called By]<UL><LI><a href="#[9a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_Mem_Write
 <LI><a href="#[100]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_Mem_Write_DMA
 <LI><a href="#[fd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_Mem_Write_IT
 </UL>
@@ -2610,7 +2612,7 @@ Local Symbols
 <BR>[Calls]<UL><LI><a href="#[e9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_WaitOnMasterAddressFlagUntilTimeout
 <LI><a href="#[e8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_WaitOnFlagUntilTimeout
 </UL>
-<BR>[Called By]<UL><LI><a href="#[9b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_Mem_Read
+<BR>[Called By]<UL><LI><a href="#[9c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_Mem_Read
 <LI><a href="#[102]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_Mem_Read_DMA
 <LI><a href="#[fe]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_Mem_Read_IT
 </UL>
@@ -2700,7 +2702,7 @@ Local Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[d8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GetTick
 </UL>
-<BR>[Called By]<UL><LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_TransmitReceive
+<BR>[Called By]<UL><LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_TransmitReceive
 <LI><a href="#[11c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_Receive
 <LI><a href="#[11b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_Transmit
 <LI><a href="#[56]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_DMATransmitReceiveCplt
